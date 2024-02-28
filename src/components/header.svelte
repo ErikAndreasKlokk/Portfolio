@@ -2,7 +2,10 @@
     import { language } from '../lib/stores/languages'
 
     function changeLang(lang: string) {
-        language.set
+        language.set({
+          language: lang
+        })
+        console.log("Changed language")
     }
 </script>
 
@@ -14,7 +17,7 @@
           <!-- svelte-ignore a11y-missing-attribute -->
           <li><button on:click={() => changeLang("Norsk")}>Norsk</button></li> 
           <!-- svelte-ignore a11y-missing-attribute -->
-          <li><button>English</button></li>
+          <li><button on:click={() => changeLang("English")}>English</button></li>
         </ul>
       </div>
 </header>
