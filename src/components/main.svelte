@@ -1,9 +1,11 @@
 <script>
+  import { onMount } from 'svelte';
     import { language } from '../lib/stores/languages'
+    import axios from 'axios';
 
-    let Norsk = ["Hei", "Heisann"]
+    let Norsk = ["Mitt navn er", "Mine vidunderlige", "Prosjekter", "Lær litt om meg ved å skrolle til høyre,", "eller skroll ned for å se hva jeg holder på med!", "Litt om meg: "]
 
-    let English = ["Hello", "Hello there"]
+    let English = ["My name is", "My wonderful", "Projects", "Learn a little about me by scrolling to the right,", "or scroll down to see what im working on!", "A little about me: "]
 
     let selectedLanguage = Norsk
 
@@ -15,8 +17,89 @@
             selectedLanguage = English
         }
     })
+
+    let repos = [];
+
+    onMount(() => {
+        axios.get('https://api.github.com/users/ErikAndreasKlokk/repos').then(function (response) {
+            repos = response.data
+            repos = repos.sort(
+                (a, b) => b.stargazers_count - a.stargazers_count
+            );
+            console.log(repos)
+        })
+        
+    })
+
 </script>
 
-<main>
-    <p>{$language.language}</p>
+<main class=" flex items-center justify-center flex-col">
+    <div class=" w-full snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen">
+        <section class=" relative w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
+            <!-- forside -->
+            <p class=" text-2xl font-light">{selectedLanguage[0]}</p>
+            <p class=" text-7xl font-bold">Erik Andreas Klokk</p>
+            <img class=" absolute bottom-24 rotate-90 w-20" src="arrow.svg" alt="arrow">
+        </section>
+        <section class=" w-full h-screen snap-always snap-start">
+            <div class=" w-full relative snap-x snap-mandatory overflow-y-hidden overflow-x-scroll h-screen flex">
+                <section class=" min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
+                    <!-- litt om siden -->
+                    <p class=" text-4xl text-center">{selectedLanguage[3]} <br> {selectedLanguage[4]}</p>
+                    <img class=" absolute right-24 w-20" src="arrow.svg" alt="arrow">
+                    <img class=" absolute bottom-24 rotate-90 w-20" src="arrow.svg" alt="arrow">
+                </section>
+                <section class=" min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
+                    <div class=" w-full relative snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-hide">
+                        <section class=" min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
+                            <!-- om meg -->
+                            <p>{selectedLanguage[5]}</p>
+                            <p class=" w-[40rem]">Akkurat nå er jeg elev på Elvebakken VGS i Oslo, Norge. Jeg er en IT nerd som er veldig glad i programmering og å løse tech problemer. Jeg elsker å lære nye ting, som diverse språk eller teknologier. På fritiden er jeg en gamer som hovedsakelig spiller FPS spill, men jeg driver også med styrke trening.<br> Ta gjerne kontakt med meg; eaklokk[at]gmail.com.</p>
+                            <img class=" absolute bottom-24 rotate-90 w-20" src="arrow.svg" alt="">
+                        </section>
+                        <section class=" min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
+                            <!-- om meg bilde -->
+                            <img class=" w-[50rem]" src="Erik_The_Thinker._Ferdy.gif" alt="">
+                        </section>
+                    </div>
+                </section>
+            </div>
+        </section>
+        <section class=" min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
+            <!-- Prosjekter -->
+            <p class=" text-2xl font-light">{selectedLanguage[1]}</p>
+            <p class=" text-7xl font-bold">{selectedLanguage[2]} :</p>
+            <div class=" flex-wrap flex justify-center mt-5">
+                {#each repos as repo, id}
+                    {#if repo.name !== "ErikAndreasKlokk"}
+                        <div class=" w-80 h-32 m-4 border-2 border-green-950 rounded-lg p-3 flex flex-col justify-between">
+                            <div class=" flex flex-col">
+                                <div class=" flex justify-between w-full">
+                                    <a target="_blank" href={repo.url}>{repo.name}</a>
+                                    <div class=" flex">
+                                        <img src="star.svg" alt="rating">
+                                        <p>{repo.stargazers_count}</p>
+                                        {#if repo.homepage !== null}
+                                            <a href={repo.homepage} target="_blank"><img src="location.svg" alt="page for website"></a>
+                                        {/if}
+                                    </div>
+                                </div>
+                                <p>{repo.description}</p>
+                            </div>
+                            <div class=" flex justify-between w-full">
+                                <time dateTime={repo.created_at}>
+                                    {new Date(repo.created_at).toLocaleDateString("en-US", {
+                                    year: "numeric",
+                                    month: "short",
+                                    day: "numeric",
+                                    })}
+                                </time>
+                                <p class=" bg-gray-200 text-gray-800 px-1 rounded-lg font-bold text-xs text-center">{repo.language}</p>
+                            </div>
+                        </div>
+                    {/if}
+                {/each}
+            </div>
+        </section>
+    </div>
 </main>

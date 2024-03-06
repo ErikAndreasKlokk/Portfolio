@@ -2,11 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/header.svelte';
 import Main from '../components/main.svelte';
+import Footer from '../components/footer.svelte';
 ---
 
 <Layout title="Erik.">
-	<div class=" w-full max-w-[1500px]">
+	<div class=" relative w-full max-w-[1500px] text-gray-200">
 		<Header client:load />
 		<Main client:load />
+		<Footer />
 	</div>
 </Layout>
