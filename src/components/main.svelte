@@ -3,9 +3,33 @@
     import { language } from '../lib/stores/languages'
     import axios from 'axios';
 
-    let Norsk = ["Mitt navn er", "Mine vidunderlige", "Prosjekter", "Lær litt om meg ved å skrolle til høyre,", "eller skroll ned for å se hva jeg holder på med!", "Litt om meg: "]
+    let Norsk = [
+                "Mitt navn er", 
+                "Mine vidunderlige", 
+                "Prosjekter", 
+                "Lær litt om meg ved å skrolle til høyre,", 
+                "eller skroll ned for å se hva jeg holder på med!", 
+                "Litt om meg: ", 
+                "Akkurat nå er jeg elev på Elvebakken VGS i Oslo, Norge. ", 
+                "Jeg er en IT nerd som er veldig glad i programmering og å løse tech problemer. ", 
+                "Jeg elsker å lære nye ting, som diverse programerings språk eller teknologier. ", 
+                "På fritiden er jeg en gamer som hovedsakelig spiller FPS spill, men jeg driver også med styrke trening. ",
+                "Ta gjerne kontakt med meg; eaklokk[at]gmail.com."
+            ]
 
-    let English = ["My name is", "My wonderful", "Projects", "Learn a little about me by scrolling to the right,", "or scroll down to see what im working on!", "A little about me: "]
+    let English = [
+                    "My name is", 
+                    "My wonderful", 
+                    "Projects", 
+                    "Learn a little about me by scrolling to the right,", 
+                    "or scroll down to see what im working on!", 
+                    "A little about me: ", 
+                    "Currently i am a student at Elvebakken VGS i Oslo, Norway. ", 
+                    "I am an IT nerd who loves programming and solving tech issues. ", 
+                    "I love learning new things, like different programming languages or technologies. ", 
+                    "In my free time i am a gamer who mainly plays FPS games, but i do also do some strength training. ",
+                    "Feel free to contact me; eaklokk[at]gmail.com."
+                ]
 
     let selectedLanguage = Norsk
 
@@ -53,8 +77,8 @@
                     <div class=" w-full relative snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-hide">
                         <section class=" min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
                             <!-- om meg -->
-                            <p>{selectedLanguage[5]}</p>
-                            <p class=" w-[40rem]">Akkurat nå er jeg elev på Elvebakken VGS i Oslo, Norge. Jeg er en IT nerd som er veldig glad i programmering og å løse tech problemer. Jeg elsker å lære nye ting, som diverse språk eller teknologier. På fritiden er jeg en gamer som hovedsakelig spiller FPS spill, men jeg driver også med styrke trening.<br> Ta gjerne kontakt med meg; eaklokk[at]gmail.com.</p>
+                            <p class=" text-7xl font-bold">{selectedLanguage[5]}</p>
+                            <p class=" w-[50rem] text-2xl font-light mt-5">{selectedLanguage[6]}{selectedLanguage[7]}{selectedLanguage[8]}{selectedLanguage[9]}{selectedLanguage[10]}</p>
                             <img class=" absolute bottom-24 rotate-90 w-20" src="arrow.svg" alt="">
                         </section>
                         <section class=" min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
@@ -72,16 +96,18 @@
             <div class=" flex-wrap flex justify-center mt-5">
                 {#each repos as repo, id}
                     {#if repo.name !== "ErikAndreasKlokk"}
-                        <div class=" w-80 h-32 m-4 border-2 border-green-950 rounded-lg p-3 flex flex-col justify-between">
+                        <div class=" w-80 h-32 m-4 border border-gray-200 rounded-lg p-3 flex flex-col justify-between hover:scale-[1.15] transition-all">
                             <div class=" flex flex-col">
                                 <div class=" flex justify-between w-full">
-                                    <a target="_blank" href={repo.url}>{repo.name}</a>
+                                    <div class=" flex">
+                                        <a target="_blank" href={repo.html_url}>{repo.name}</a>
+                                        {#if repo.homepage !== null}
+                                            <a href={repo.homepage} target="_blank" class=" ml-3"><img src="location.svg" alt="page for website"></a>
+                                        {/if}
+                                    </div>
                                     <div class=" flex">
                                         <img src="star.svg" alt="rating">
                                         <p>{repo.stargazers_count}</p>
-                                        {#if repo.homepage !== null}
-                                            <a href={repo.homepage} target="_blank"><img src="location.svg" alt="page for website"></a>
-                                        {/if}
                                     </div>
                                 </div>
                                 <p>{repo.description}</p>
@@ -94,7 +120,7 @@
                                     day: "numeric",
                                     })}
                                 </time>
-                                <p class=" bg-gray-200 text-gray-800 px-1 rounded-lg font-bold text-xs text-center">{repo.language}</p>
+                                <p class=" bg-gray-200 text-gray-800 px-1 rounded-lg font-bold text-xs flex justify-center items-center">{repo.language}</p>
                             </div>
                         </div>
                     {/if}
