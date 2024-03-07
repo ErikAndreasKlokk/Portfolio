@@ -57,31 +57,31 @@
 
 </script>
 
-<main class=" flex items-center justify-center flex-col">
+<main class=" flex items-center justify-center flex-col scroll-smooth">
     <div class=" w-full snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen">
-        <section class=" relative w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
+        <section id="forside" class=" p-3 relative w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
             <!-- forside -->
             <p class=" text-2xl font-light">{selectedLanguage[0]}</p>
-            <p class=" text-7xl font-bold">Erik Andreas Klokk</p>
+            <p class=" text-7xl font-bold text-center sm:text-4xl">Erik Andreas Klokk</p>
             <img class=" absolute bottom-24 rotate-90 w-20" src="arrow.svg" alt="arrow">
         </section>
         <section class=" w-full h-screen snap-always snap-start">
             <div class=" w-full relative snap-x snap-mandatory overflow-y-hidden overflow-x-scroll h-screen flex">
-                <section class=" min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
+                <section id="omsiden" class=" p-16 min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
                     <!-- litt om siden -->
-                    <p class=" text-4xl text-center">{selectedLanguage[3]} <br> {selectedLanguage[4]}</p>
-                    <img class=" absolute right-24 w-20" src="arrow.svg" alt="arrow">
+                    <p class=" text-4xl text-center sm:text-2xl">{selectedLanguage[3]} <br> {selectedLanguage[4]}</p>
+                    <img class=" absolute right-24 w-20 xl:right-1" src="arrow.svg" alt="arrow">
                     <img class=" absolute bottom-24 rotate-90 w-20" src="arrow.svg" alt="arrow">
                 </section>
                 <section class=" min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
                     <div class=" w-full relative snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-hide">
-                        <section class=" min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
+                        <section id="ommeg" class=" p-3 min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
                             <!-- om meg -->
-                            <p class=" text-7xl font-bold">{selectedLanguage[5]}</p>
-                            <p class=" w-[50rem] text-2xl font-light mt-5">{selectedLanguage[6]}{selectedLanguage[7]}{selectedLanguage[8]}{selectedLanguage[9]}{selectedLanguage[10]}</p>
+                            <p class=" text-7xl font-bold sm:text-4xl">{selectedLanguage[5]}</p>
+                            <p class=" w-[50rem] text-2xl font-light mt-5 max-w-full sm:text-lg">{selectedLanguage[6]}{selectedLanguage[7]}{selectedLanguage[8]}{selectedLanguage[9]}{selectedLanguage[10]}</p>
                             <img class=" absolute bottom-24 rotate-90 w-20" src="arrow.svg" alt="">
                         </section>
-                        <section class=" min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
+                        <section id="ommegbilde" class=" p-3 min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
                             <!-- om meg bilde -->
                             <img class=" w-[50rem]" src="Erik_The_Thinker._Ferdy.gif" alt="">
                         </section>
@@ -89,10 +89,10 @@
                 </section>
             </div>
         </section>
-        <section class=" min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
+        <section id="prosjekter" class=" p-3 min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
             <!-- Prosjekter -->
             <p class=" text-2xl font-light">{selectedLanguage[1]}</p>
-            <p class=" text-7xl font-bold">{selectedLanguage[2]} :</p>
+            <p class=" text-7xl font-bold sm:text-4xl">{selectedLanguage[2]} :</p>
             <div class=" flex-wrap flex justify-center mt-5">
                 {#each repos as repo, id}
                     {#if repo.name !== "ErikAndreasKlokk"}
