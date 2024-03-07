@@ -58,7 +58,7 @@
 </script>
 
 <main class=" flex items-center justify-center flex-col scroll-smooth">
-    <div class=" w-full snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen">
+    <div class=" w-full snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-hide">
         <section id="forside" class=" p-3 relative w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
             <!-- forside -->
             <p class=" text-2xl font-light">{selectedLanguage[0]}</p>
@@ -66,7 +66,7 @@
             <img class=" absolute bottom-24 rotate-90 w-20" src="arrow.svg" alt="arrow">
         </section>
         <section class=" w-full h-screen snap-always snap-start">
-            <div class=" w-full relative snap-x snap-mandatory overflow-y-hidden overflow-x-scroll h-screen flex">
+            <div class=" w-full relative snap-x snap-mandatory overflow-y-hidden overflow-x-scroll h-screen flex scrollbar-hide">
                 <section id="omsiden" class=" p-16 min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
                     <!-- litt om siden -->
                     <p class=" text-4xl text-center sm:text-2xl">{selectedLanguage[3]} <br> {selectedLanguage[4]}</p>
