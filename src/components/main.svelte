@@ -7,7 +7,7 @@
                 "Mitt navn er", 
                 "Mine vidunderlige", 
                 "Prosjekter", 
-                "Lær litt om meg ved å skrolle til høyre,", 
+                "Lær litt om meg ved å skrolle til høyre, ", 
                 "eller skroll ned for å se hva jeg holder på med!", 
                 "Litt om meg: ", 
                 "Akkurat nå er jeg elev på Elvebakken VGS i Oslo, Norge. ", 
@@ -21,7 +21,7 @@
                     "My name is", 
                     "My wonderful", 
                     "Projects", 
-                    "Learn a little about me by scrolling to the right,", 
+                    "Learn a little about me by scrolling to the right, ", 
                     "or scroll down to see what im working on!", 
                     "A little about me: ", 
                     "Currently i am a student at Elvebakken VGS i Oslo, Norway. ", 
@@ -63,36 +63,40 @@
             <!-- forside -->
             <p class=" text-2xl font-light">{selectedLanguage[0]}</p>
             <p class=" text-7xl font-bold text-center sm:text-4xl">Erik Andreas Klokk</p>
-            <img class=" absolute bottom-24 rotate-90 w-20" src="arrow.svg" alt="arrow">
+            <a href="#omsiden" class=" absolute bottom-2 rotate-90 w-20"> <img class=" w-20" src="arrow.svg" alt="arrow"></a>
         </section>
         <section class=" w-full h-screen snap-always snap-start">
             <div class=" w-full relative snap-x snap-mandatory overflow-y-hidden overflow-x-scroll h-screen flex scrollbar-hide">
-                <section id="omsiden" class=" p-16 min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
+                <section id="omsiden" class=" p-3 min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
                     <!-- litt om siden -->
-                    <p class=" text-4xl text-center sm:text-2xl">{selectedLanguage[3]} <br> {selectedLanguage[4]}</p>
-                    <img class=" absolute right-24 w-20 xl:right-1" src="arrow.svg" alt="arrow">
-                    <img class=" absolute bottom-24 rotate-90 w-20" src="arrow.svg" alt="arrow">
+                    <p class=" xl:mr-20 max-w-96 text-4xl text-center sm:text-2xl">{selectedLanguage[3]}{selectedLanguage[4]}</p>
+                    <a href="#forside" class=" absolute top-2 rotate-[270deg]"><img class=" w-20" src="arrow.svg" alt="arrow"></a>
+                    <a href="#ommeg" class=" absolute right-2 md:right-1"><img class="  w-20" src="arrow.svg" alt="arrow"></a>
+                    <a href="#prosjekter" class=" absolute bottom-2 rotate-90"><img class=" w-20" src="arrow.svg" alt="arrow"></a>
                 </section>
                 <section class=" min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
                     <div class=" w-full relative snap-y snap-mandatory overflow-y-scroll overflow-x-hidden h-screen scrollbar-hide">
                         <section id="ommeg" class=" p-3 min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
                             <!-- om meg -->
-                            <p class=" text-7xl font-bold sm:text-4xl">{selectedLanguage[5]}</p>
-                            <p class=" w-[50rem] text-2xl font-light mt-5 max-w-full sm:text-lg">{selectedLanguage[6]}{selectedLanguage[7]}{selectedLanguage[8]}{selectedLanguage[9]}{selectedLanguage[10]}</p>
-                            <img class=" absolute bottom-24 rotate-90 w-20" src="arrow.svg" alt="">
+                            <p class=" text-7xl font-bold sm:text-4xl md:ml-16">{selectedLanguage[5]}</p>
+                            <p class=" w-[50rem] text-2xl font-light mt-5 max-w-full sm:text-lg md:ml-16 md:max-w-80 xl:max-w-[700px]">{selectedLanguage[6]}{selectedLanguage[7]}{selectedLanguage[8]}{selectedLanguage[9]}{selectedLanguage[10]}</p>
+                            <a href="#ommegbilde" class=" absolute bottom-2 rotate-90"><img class=" w-20" src="arrow.svg" alt=""></a>
+                            <a href="#omsiden" class=" absolute left-2 rotate-180 xl:left-1"><img class=" w-20" src="arrow.svg" alt=""></a>
                         </section>
-                        <section id="ommegbilde" class=" p-3 min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
+                        <section id="ommegbilde" class=" relative p-3 min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
                             <!-- om meg bilde -->
-                            <img class=" w-[50rem]" src="Erik_The_Thinker._Ferdy.gif" alt="">
+                            <img class=" w-[45rem] max-h-[80vh]" src="Erik_The_Thinker._Ferdy.gif" alt="">
+                            <a href="#ommeg" class=" absolute top-2 rotate-[270deg]"><img class=" w-20" src="arrow.svg" alt=""></a>
                         </section>
                     </div>
                 </section>
             </div>
         </section>
-        <section id="prosjekter" class=" p-3 min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
+        <section id="prosjekter" class=" relative p-3 min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start overflow-y-scroll xl:justify-normal">
             <!-- Prosjekter -->
-            <p class=" text-2xl font-light">{selectedLanguage[1]}</p>
+            <p class=" text-2xl font-light xl:mt-16">{selectedLanguage[1]}</p>
             <p class=" text-7xl font-bold sm:text-4xl">{selectedLanguage[2]} :</p>
+            <a href="#omsiden" class=" absolute top-2 rotate-[270deg]"><img class=" w-20" src="arrow.svg" alt="arrow"></a>
             <div class=" flex-wrap flex justify-center mt-5">
                 {#each repos as repo, id}
                     {#if repo.name !== "ErikAndreasKlokk"}
@@ -100,8 +104,8 @@
                             <div class=" flex flex-col">
                                 <div class=" flex justify-between w-full">
                                     <div class=" flex">
-                                        <a target="_blank" href={repo.html_url}>{repo.name}</a>
-                                        {#if repo.homepage !== null}
+                                        <a target="_blank" href="{repo.html_url}" class=" font-bold underline hover:decoration-blue-500 ">{repo.name}</a>
+                                        {#if repo.homepage !== ""}
                                             <a href={repo.homepage} target="_blank" class=" ml-3"><img src="location.svg" alt="page for website"></a>
                                         {/if}
                                     </div>
@@ -110,10 +114,10 @@
                                         <p>{repo.stargazers_count}</p>
                                     </div>
                                 </div>
-                                <p>{repo.description}</p>
+                                <a href="{repo.html_url}" target="_blank" alt=" description">{repo.description}</a>
                             </div>
                             <div class=" flex justify-between w-full">
-                                <time dateTime={repo.created_at}>
+                                <time class=" text-sm" dateTime={repo.created_at}>
                                     {new Date(repo.created_at).toLocaleDateString("en-US", {
                                     year: "numeric",
                                     month: "short",
