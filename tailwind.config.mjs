@@ -34,6 +34,20 @@ export default {
 					'100%': { color: theme('text.gray.200') },
 				},
 			}),
+
+			colors: {
+				'portfolio-50':'#e1f7e1',
+				'portfolio-100':'#baedba',
+				'portfolio-200':'#a0e7a0',
+				'portfolio-300':'#79dd79',
+				'portfolio-400':'#5fd75f',
+				'portfolio-500':'#37cd37',
+				'portfolio-600':'#2db62d',
+				'portfolio-700':'#238f23',
+				'portfolio-800':'#1d751d',
+				'portfolio-900':'#134e13',
+				'portfolio-950':'#0b2d0b',
+			}
 		},
 	},
 	plugins: [require("daisyui"), require('tailwind-scrollbar-hide')],

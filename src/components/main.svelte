@@ -63,13 +63,13 @@
             <!-- forside -->
             <p class=" text-2xl font-light">{selectedLanguage[0]}</p>
             <p class=" text-7xl font-bold text-center sm:text-4xl">Erik Andreas Klokk</p>
-            <a href="#omsiden" class=" absolute bottom-2 rotate-90 w-20"> <img class=" w-20" src="arrow.svg" alt="arrow"></a>
+            <a href="#omsiden" class=" absolute bottom-2 rotate-90 "> <img class=" w-20" src="arrow.svg" alt="arrow"></a>
         </section>
         <section class=" w-full h-screen snap-always snap-start">
             <div class=" w-full relative snap-x snap-mandatory overflow-y-hidden overflow-x-scroll h-screen flex scrollbar-hide">
                 <section id="omsiden" class=" p-3 min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
                     <!-- litt om siden -->
-                    <p class=" xl:mr-20 max-w-96 text-4xl text-center sm:text-2xl">{selectedLanguage[3]}{selectedLanguage[4]}</p>
+                    <p class=" xl:mr-20 max-w-[30rem] text-4xl text-center sm:text-2xl">{selectedLanguage[3]}{selectedLanguage[4]}</p>
                     <a href="#forside" class=" absolute top-2 rotate-[270deg]"><img class=" w-20" src="arrow.svg" alt="arrow"></a>
                     <a href="#ommeg" class=" absolute right-2 md:right-1"><img class="  w-20" src="arrow.svg" alt="arrow"></a>
                     <a href="#prosjekter" class=" absolute bottom-2 rotate-90"><img class=" w-20" src="arrow.svg" alt="arrow"></a>
@@ -85,7 +85,7 @@
                         </section>
                         <section id="ommegbilde" class=" relative p-3 min-w-full h-screen flex items-center justify-center flex-col snap-always snap-start">
                             <!-- om meg bilde -->
-                            <img class=" w-[45rem] max-h-[80vh]" src="Erik_The_Thinker._Ferdy.gif" alt="">
+                            <img class=" !aspect-square max-h-[80vh] " src="Erik_The_Thinker._Ferdy.gif" alt="">
                             <a href="#ommeg" class=" absolute top-2 rotate-[270deg]"><img class=" w-20" src="arrow.svg" alt=""></a>
                         </section>
                     </div>
