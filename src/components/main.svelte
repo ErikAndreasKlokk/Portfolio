@@ -169,7 +169,7 @@
                 </section>
             </div>
         </section>
-        <section id="prosjekter" class=" relative min-w-full h-screen flex items-center justify-between flex-col snap-always snap-start overflow-y-scroll xl:justify-normal">
+        <section id="prosjekter" class=" relative min-w-full h-screen flex items-center justify-between flex-col snap-always snap-start overflow-y-hidden xl:justify-normal">
             <!-- Prosjekter !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
             <!-- pil opp div -->
             <div class=" w-16 h-16 flex">
