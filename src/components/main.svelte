@@ -81,7 +81,7 @@
                 </div>
             </div>
             <!-- pil ned div -->
-            <div class=" flex w-16 h-32">
+            <div class=" flex w-16 h-16 md:h-48">
                 <a href="#omsiden" class=" rotate-90 flex justify-center"> <img class=" w-16" src="arrow.svg" alt="arrow"></a>
             </div>
         </section>
@@ -108,7 +108,7 @@
                         </div>
                     </div>
                     <!-- pil ned div -->
-                    <div class=" w-16 h-32 flex justify-center items-center">
+                    <div class=" w-16 h-16 md:h-48 flex justify-center items-center">
                         <a href="#prosjekter" class=" rotate-90"><img class=" w-16" src="arrow.svg" alt="arrow"></a>
                     </div>
                 </section>
@@ -136,7 +136,7 @@
                                 </div>
                             </div>
                             <!-- pil ned div -->
-                            <div class=" w-16 h-32 flex justify-center items-center">
+                            <div class=" w-16 h-16 md:h-48 flex justify-center items-center">
                                 <a href="#ommegbilde" class=" rotate-90"><img class=" w-16" src="arrow.svg" alt=""></a>
                             </div>
                         </section>
