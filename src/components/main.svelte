@@ -169,7 +169,7 @@
                 </section>
             </div>
         </section>
-        <section id="prosjekter" class=" relative min-w-full h-screen flex items-center justify-between flex-col snap-always snap-start overflow-y-hidden xl:justify-normal">
+        <section id="prosjekter" class=" relative min-w-full min-h-screen flex items-center justify-between flex-col snap-always snap-start overflow-y-hidden xl:justify-normal">
             <!-- Prosjekter !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
             <!-- pil opp div -->
             <div class=" w-16 h-16 flex">
@@ -184,7 +184,7 @@
                 <div class=" w-full flex justify-center items-center flex-col">
                     <p class=" text-2xl font-light">{selectedLanguage[1]}</p>
                     <p class=" text-7xl font-bold sm:text-4xl">{selectedLanguage[2]} :</p>
-                    <div class=" flex-wrap flex justify-center mt-5">
+                    <div class=" flex-wrap flex justify-center mt-5 mb-14 overflow-y-scroll">
                         {#each repos as repo, id}
                             {#if repo.name !== "ErikAndreasKlokk"}
                                 <div class=" w-full min-h-32 max-w-72  m-4 border border-gray-200 rounded-lg p-3 flex flex-col justify-between hover:scale-[1.15] transition-all">
