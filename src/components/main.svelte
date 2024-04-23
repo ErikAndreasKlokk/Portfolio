@@ -192,7 +192,7 @@
                                         <div class=" flex justify-between w-full">
                                             <div class=" flex">
                                                 <a target="_blank" href="{repo.html_url}" class=" font-bold underline hover:decoration-blue-500 ">{repo.name}</a>
-                                                {#if repo.homepage !== null}
+                                                {#if repo.homepage}
                                                     <a href={repo.homepage} target="_blank" class=" ml-3"><img src="location.svg" alt="page for website"></a>
                                                 {/if}
                                             </div>
