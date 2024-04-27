@@ -10,6 +10,8 @@
 </script>
 
 <header class=" w-full max-w-[1500px] flex justify-end fixed z-50">
+  <a class=" h-12 px-4 hover:bg-white/10 transition-all rounded-lg flex items-center justify-center" href="https://github.com/erikandreasklokk" target="_blank"><img class=" w-6" src="/github.svg" alt="link to github"></a>
+  <a class=" h-12 px-4 hover:bg-white/10 transition-all rounded-lg flex items-center justify-center" href="https://www.linkedin.com/in/erik-andreas-klokk-5415882a0/" target="_blank"><img class=" w-6" src="/linkedin.svg" alt=""></a>
   <div class="dropdown dropdown-end">
     <div tabindex="0" role="button" class="btn btn-ghost rounded-btn"><img src="/language.svg" alt="Select language"></div>
     <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
