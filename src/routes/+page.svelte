@@ -9,8 +9,8 @@
 
 <main class=" text-white py-56 flex w-full h-full px-3 relative breakpoint:flex-col breakpoint:items-center breakpoint:py-10">
     <div class=" flex flex-col w-1/2 h-fit sticky px-5 top-56 breakpoint:static breakpoint:mb-5 breakpoint:items-center breakpoint:w-fit">
-        <h1 class=" font-bold text-6xl mb-3 breakpoint:text-center">ERIK ANDREAS KLOKK</h1>
-        <div class=" border flex flex-col border-white/60 rounded-md px-3 py-1 w-4/5 breakpoint:w-full">
+        <h1 class=" font-bold text-6xl mb-4 breakpoint:text-center">ERIK ANDREAS KLOKK</h1>
+        <div class=" border flex flex-col border-white/60 rounded-md px-3 py-1 w-4/5 breakpoint:w-full breakpoint:my-1">
             <div class=" flex justify-between ">
                 <p class=" flex text-white/60 text-sm gap-1 items-center">
                     <img class=" h-4" src="/location.svg" alt="location">
