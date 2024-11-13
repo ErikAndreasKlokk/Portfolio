@@ -1,8 +1,8 @@
 <script lang="ts">
     export let title: string;
     export let desc: string;
-    export let link: string;
-    export let date: string | Date;
+    export let link: string = "";
+    export let date: string | Date = "";
     export let isLast: boolean = false;
 </script>
 
@@ -13,11 +13,13 @@
                 <h3 class=" text-lg font-semibold">{title}</h3>
                 <p class=" text-sm text-white/60">{date}</p>
             </div>
-            <div>
-                <a href={link} target="_blank">
-                    <img class=" h-7" src="arrow.svg" alt="page for wish">
-                </a>
-            </div>
+            {#if link !== ""}
+                <div>
+                    <a href={link} target="_blank">
+                        <img class=" h-7" src="arrow.svg" alt="page for wish">
+                    </a>
+                </div>
+            {/if}
         </div>
         <p class=" text-lg">{desc}</p>
     </div>
