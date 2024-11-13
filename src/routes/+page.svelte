@@ -32,6 +32,9 @@
                 </div>
             </div>
             <p class=" text-lg my-1">18 year old frontend web developer working at Statens Pensjonskasse.</p>
+            <div class=" w-full flex justify-end pb-1 pr-1">
+                <a class=" text-sm text-white/60 underline" href="/wishlist">See my wishlist</a>
+            </div>
         </div>
     </div>
     <div class=" flex flex-col items-start w-1/2 h-full px-5 breakpoint:w-fit breakpoint:items-center">
