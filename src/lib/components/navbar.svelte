@@ -52,7 +52,7 @@
     $: if($navigating) isBlogSlug = URL_blog_adder($page.url.pathname);
 </script>
 
-<nav class=" w-full h-14 hidden {isBlogSlug ? "justify-between" : "justify-end"} items-center breakpoint:flex ">
+<nav class=" w-full h-14 hidden {isBlogSlug ? "justify-between" : "justify-end"} items-center breakpoint:flex px-3 ">
     {#if isBlogSlug} 
         <a class=" text-white text-lg underline" href="/blog">{"<"} blog</a>
     {/if}
