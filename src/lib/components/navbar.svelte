@@ -50,6 +50,7 @@
     URL_color_changer($page.url.pathname)
     $: if($navigating) URL_color_changer($page.url.pathname);
     $: if($navigating) isBlogSlug = URL_blog_adder($page.url.pathname);
+    $: if($navigating) openMenuFunc();
 </script>
 
 <nav class=" w-full h-14 hidden {isBlogSlug ? "justify-between" : "justify-end"} items-center breakpoint:flex px-3 ">
@@ -64,7 +65,7 @@
 </nav>
 <div use:autoAnimate={{ duration: 50 }} class=" h-full fixed right-0 top-0 overflow-hidden flex justify-end z-50">
     {#if openMenu}
-        <div class=" text-white w-96 border-l border-white/60 bg-black pl-5">
+        <div class=" text-white w-72 border-l border-white/60 bg-black pl-5">
             <div class=" w-full h-14 flex items-center">
                 {#if openMenu}
                     <button on:click={() => openMenuFunc()}>
