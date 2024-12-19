@@ -13,7 +13,7 @@
     <div class=" flex flex-col items-start w-1/2 h-full px-5 breakpoint:w-fit breakpoint:items-center">
         <div class=" flex w-fit items-center flex-col">
             <h2 class=" text-4xl text-yellow-500 mb-6 text-center">Experience & Education</h2>
-            <Expandedu title="Statens Pensjonskasse" desc="Working fulltime as a frontend web developer/apprentice." learned="Git, React, Teamwork, Jira" date="August 2024 - Today"/>
+            <Expandedu title="Statens Pensjonskasse" desc="Working fulltime as a fullstack web developer/apprentice." learned="Git, React, Teamwork, Jira" date="August 2024 - Today"/>
             <Expandedu title="Elvebakken VGS" desc="Student at Elvebakken VGS, Informational technology (IT2)" learned="Svelte, TypeScript, NextJS" date="August 2023 - June 2024"/>
             <Expandedu isLast={true} title="Kuben VGS" desc="Student at Kuben VGS, Informational technology & Media production (IM1)" learned="HTML, CSS, JavaScript, Video editing" date="August 2022 - June 2023"/>
         </div>
@@ -33,12 +33,12 @@
         <div class=" flex w-full items-center flex-col mt-10">
             <h2 class=" text-4xl text-yellow-500 mb-6">About me</h2>
             <div class=" w-full relative pb-5 flex gap-2 flex-wrap">
-                <p class=" text-lg">Right now im a frontend web developer at Statens Pensjonskasse in Oslo, Norway. I am an IT nerd who loves problem solving and difficult tasks. In my free time i play videogames (mainly FPS games), Strength training and watch shows. Feel free to contact me: eaklokk@gmail.com</p>
+                <p class=" text-lg">Right now im a fullstack web developer at Statens Pensjonskasse in Oslo, Norway. I am an IT nerd who loves problem solving and difficult tasks. In my free time i play videogames (mainly FPS games), Strength training and watch shows. Feel free to contact me: eaklokk@gmail.com</p>
             </div>
         </div>
         <div class=" flex w-full items-center flex-col mt-10">
             <h2 class=" text-4xl text-yellow-500 mb-6">Projects</h2>
-            <div class=" w-full relative pb-5 flex gap-2 flex-col breakpoint:w-fit breakpoint:items-center">
+            <div class=" w-full relative pb-5 flex flex-col breakpoint:w-fit breakpoint:items-center">
                 {#await data.streamed.projects}
                     <p>Loading projects...</p>
                 {:then projects}
