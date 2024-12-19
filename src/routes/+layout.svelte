@@ -1,4 +1,5 @@
 <script>
+    import Navbar from "$lib/components/navbar.svelte";
     import "../app.css";
 </script>
 
@@ -6,8 +7,7 @@
     <title>Erik Klokk</title>
 </svelte:head>
 
-<html lang="en" class=" bg-black max-w-screen min-h-screen flex justify-center">
-    <div class=" max-w-[1200px] breakpoint:max-w-[600px]">
-        <slot />
-    </div>
-</html>
+<div class=" max-w-[1200px] w-full breakpoint:max-w-[600px]">
+    <Navbar />
+    <slot />
+</div>

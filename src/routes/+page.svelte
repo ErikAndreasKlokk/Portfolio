@@ -47,6 +47,8 @@
                             <Project project={project}/>
                         {/if}
                     {/each}
+                {:catch error}
+                    <p>Error fetching projects from GitHub...</p>
                 {/await}
             </div>
         </div>
