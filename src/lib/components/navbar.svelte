@@ -31,16 +31,22 @@
         if (url_check === "/wishlist") {
             isOnHome = false
             isOnBlog = false
+            openMenu = false
+            menuWidth = "0px"
             return isOnWishlist = true
         } 
         if (url_check === "/blog") {
             isOnHome = false
             isOnWishlist = false
+            openMenu = false
+            menuWidth = "0px"
             return isOnBlog = true
         }
         if (url_check === "/") {
             isOnWishlist = false
             isOnBlog = false
+            openMenu = false
+            menuWidth = "0px"
             return isOnHome = true
         }
     }
@@ -50,7 +56,6 @@
     URL_color_changer($page.url.pathname)
     $: if($navigating) URL_color_changer($page.url.pathname);
     $: if($navigating) isBlogSlug = URL_blog_adder($page.url.pathname);
-    $: if($navigating) openMenuFunc();
 </script>
 
 <nav class=" w-full h-14 hidden {isBlogSlug ? "justify-between" : "justify-end"} items-center breakpoint:flex px-3 ">
