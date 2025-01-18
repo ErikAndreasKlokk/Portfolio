@@ -42,9 +42,13 @@
                 {#await data.streamed.projects}
                     <p>Loading projects...</p>
                 {:then projects}
-                    {#each projects as project}
+                    {#each projects as project, id}
                         {#if project.name !== "ErikAndreasKlokk"}
-                            <Project project={project}/>
+                            {#if projects.length === id+1}
+                                <Project project={project} isLast={true}/>
+                            {:else}
+                                <Project project={project}/>
+                            {/if}
                         {/if}
                     {/each}
                 {:catch error}
