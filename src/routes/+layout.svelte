@@ -1,8 +1,11 @@
 <script>
     import Navbar from "$lib/components/navbar.svelte";
+    import { onMount } from "svelte";
     import "../app.css";
     import { injectAnalytics } from '@vercel/analytics/sveltekit'
-    injectAnalytics()
+    onMount(() => {
+        injectAnalytics()
+    })
 </script>
 
 <svelte:head >
