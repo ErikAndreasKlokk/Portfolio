@@ -1,11 +1,11 @@
 <script>
     import Navbar from "$lib/components/navbar.svelte";
-    import { onMount } from "svelte";
     import "../app.css";
     import { injectAnalytics } from '@vercel/analytics/sveltekit'
-    onMount(() => {
-        injectAnalytics()
-    })
+    import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
+
+    injectSpeedInsights();
+    injectAnalytics();
 </script>
 
 <svelte:head >
