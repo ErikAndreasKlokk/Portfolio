@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head >
-    <title>Erik Klokk</title>
+    <title>Erik Andreas Klokk</title>
 </svelte:head>
 
 <div class=" max-w-[1200px] w-full breakpoint:max-w-[600px]">

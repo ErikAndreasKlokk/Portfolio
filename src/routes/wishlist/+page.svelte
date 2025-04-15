@@ -9,8 +9,7 @@
         
         <div class=" flex w-full items-center flex-col">
             <h2 class=" text-4xl text-yellow-500 mb-6 text-center">Wishlist</h2>
-            <Wish title='New custom keyboard' desc="I've already got a custom keyboard, but the experience of researching and building one was fun" date="Des 19, 2024"/>
-            <Wish isLast={true} title='Artisan FX Type-99' desc="Artisan FX Type-99 - XSOFT - XL - Black" date="Des 19, 2024" link="https://www.maxgaming.no/no/musematter/musematte-fx-type-99-xsoft-xl-svart"/>
+            <Wish isLast={true} title="Usb hub" desc="Usb hub with both usb-a's and usb-c's" date="Apr 15, 2025"/>
             <!-- <Wish title="" desc="" date="Nov 13, 2024" link=""/> -->
         </div>
 

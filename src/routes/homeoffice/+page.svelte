@@ -7,7 +7,7 @@
       <SideProfile />
       <div class=" flex flex-col items-start w-7/12  h-full px-5 breakpoint:w-fit breakpoint:items-center">
   
-          <div class=" flex w-full items-center flex-col mt-10">
+          <div class=" flex w-full items-center flex-col">
               <h2 class=" text-4xl text-yellow-500 mb-6 text-center">Main PC</h2>
               <Wish title="AMD Ryzen 7 9800X3D" date="Jan 8, 2025" desc="8 cores, 16 threads, 4.7 GHz base clockspeed, 5.2 GHz top clockspeed" link="https://www.komplett.no/product/1315831/datautstyr/pc-komponenter/prosessorer/amd-ryzen-7-9800x3d-cpu?queryid=5287d22d3da9cf1da301bee42bc402e1&sort=None#"/>
               <Wish title="Nvidia GeForce RTX 3070TI" date="Feb 21, 2022" desc="ASUS GeForce RTX 3070 Ti TUF OC" link="https://www.komplett.no/product/1188792?noredirect=true#"/>
@@ -24,9 +24,11 @@
           
           <div class=" flex w-full items-center flex-col mt-10">
               <h2 class=" text-4xl text-yellow-500 mb-6 text-center">Office/gaming setup</h2>
-              <Wish title="ZOOM TKL custom keyboard" date="Feb, 2023" desc="Gateron CAP V2 Golden Yellow switches, ZOOM TKL case (black with forest green accents), unknown keycaps and stabilizers"/>
+              <Wish title="Wooting 80HE custom keyboard" date="May, 2025" desc="Geon raw HE switches, Wooting 80HE aluminium case, Keychron cherry profile carbon vibe keycaps, main" link="https://wooting.io/configurator/wooting-80he?model=ISO&lang=Nordic&keycaps=none&quantity=1&product=module&switches=54037562261848&case=47937557004632"/>
+              <Wish title="ZOOM TKL custom keyboard" date="Feb, 2023" desc="Gateron CAP V2 Golden Yellow switches, ZOOM TKL case (black with forest green accents), unknown keycaps and stabilizers, secondary"/>
               <Wish title="WL Mouse BeastX" desc="8K polling rate, 39g, purple" link="https://www.wlmouse.com/en-wl/products/beast-x-8k-wireless-gaming-mouse?variant=48748797526314"/>
-              <Wish title="Artisan FX Zero XSoft" desc="Artisan Zero XSoft - XL - mousepad (black)" link="https://www.maxgaming.no/no/musematter/fx-zero-xsoft-xl-svart"/>
+              <Wish title="Artisan FX Type-99 XSoft" desc="Artisan Type-99 XSoft - XXL - mousepad (gray), main" link="https://www.maxgaming.no/no/musematter/musematte-fx-type-99-soft-xxl-svart"/>
+              <Wish title="Artisan FX Zero XSoft" desc="Artisan Zero XSoft - XXL - mousepad (black), secondary" link="https://www.maxgaming.no/no/musematter/musematte-fx-zero-xsoft-xxl-svart"/>
               <Wish title="Shure MV7" desc="Shure MV7 microphone" link="https://www.maxgaming.no/no/mikrofoner/mv7-podcast-mikrofon-svart"/>
               <Wish title="Elgato Wave XLR" desc="Elgato Wave XLR" link="https://www.komplett.no/product/1242789/datautstyr/streaming/mikrofon/elgato-wave-xlr"/>
               <Wish title="Elgato Wave Mic Arm LP" desc="Low profile elgato mic arm" link="https://www.komplett.no/product/1200519/datautstyr/streaming/streaming-tilbehoer/elgato-wave-mic-arm-lp"/>
