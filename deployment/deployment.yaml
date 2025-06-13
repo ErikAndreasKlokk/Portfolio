@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: svelte-container
-          image: sha256:c34201e3354cb2e03e787a2408e9d7092dabdac7f7d63783f1b11f487c9b503e
+          image: https://hub.docker.com/r/pengbai/docker-supermario/
           ports:
             - containerPort: 80
           resources:
