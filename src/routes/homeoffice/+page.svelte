@@ -11,7 +11,7 @@
               <h2 class=" text-4xl text-yellow-500 mb-6 text-center">Main PC</h2>
               <Wish title="AMD Ryzen 7 9800X3D" date="Jan 8, 2025" desc="8 cores, 16 threads, 4.7 GHz base clockspeed, 5.2 GHz top clockspeed" link="https://www.komplett.no/product/1315831/datautstyr/pc-komponenter/prosessorer/amd-ryzen-7-9800x3d-cpu?queryid=5287d22d3da9cf1da301bee42bc402e1&sort=None#"/>
               <Wish title="Nvidia GeForce RTX 3070TI" date="Feb 21, 2022" desc="ASUS GeForce RTX 3070 Ti TUF OC" link="https://www.komplett.no/product/1188792?noredirect=true#"/>
-              <Wish title="Corsair Vengeance RGB DDR5" date="Des 16, 2024" desc="Corsair Vengeance RGB DDR5 6000Mhz 32GB 2x16GB, XMP 3.0, DIMM, CL30 with 30-36-36-76 timings." link="https://www.komplett.no/product/1246830/datautstyr/pc-komponenter/minnebrikker/corsair-vengeance-rgb-ddr5-6000mhz-32gb"/>
+              <Wish title="Corsair Vengeance RGB DDR5 32GB" date="Des 16, 2024" desc="Corsair Vengeance RGB DDR5 6000Mhz 32GB 2x16GB, XMP 3.0, DIMM, CL30 with 30-36-36-76 timings." link="https://www.komplett.no/product/1246830/datautstyr/pc-komponenter/minnebrikker/corsair-vengeance-rgb-ddr5-6000mhz-32gb"/>
               <Wish title="Corsair TX750M" date="Feb 21, 2022" desc="750W PSU, rated 80 Plus gold, semi modular" link="https://www.komplett.no/product/915833?noredirect=true"/>
               <Wish title="Kingston KC3000 1TB" date="Nov 29, 2024" desc="Kingston KC3000 1TB M.2 SSD, r/w 7000/7000 MB/s" link="https://www.elkjop.no/product/gaming/pc-komponenter/intern-lagring/intern-ssd/kingston-kc3000-pcie-40-intern-nvme-ssd-1024-gb/512635"/>
               <Wish title="WD BLACK SN750 M.2 1TB" date="Feb 21, 2022" desc="WD BLACK SN750 M.2 NVMe SSD 1TB, r/w 3470 MBps/3000 MBps" link="https://www.komplett.no/product/1121774?noredirect=true#"/>
@@ -42,6 +42,7 @@
 
           <div class=" flex w-full items-center flex-col mt-10">
               <h2 class=" text-4xl text-yellow-500 mb-6 text-center">Homelab Server</h2>
+              <Wish title="Nvidia GeForce RTX 2080" desc="Bought a used MSI GeForce RTX 2080 Gaming X Trio" date="Jun 17, 2025" link="https://www.komplettbedrift.no/product/1090737"/> 
               <Wish title="AMD Ryzen 7 5800X" date="Feb 21, 2022" desc="AM4 socket, 8-core, 16 threads, base clockspeed 3.8GHz, max clockspeed 4.7GHz" link="https://www.komplett.no/product/1172187?noredirect=true"/>
               <Wish title="Kingston FURY Beast DDR4" date="Feb 21, 2022" desc="32GB 2x16GB, DDR4, 3600MHz, CL18" link="https://www.komplett.no/product/1191392/datautstyr/pc-komponenter/minnebrikker/kingston-fury-beast-ddr4-3600mhz-32gb"/>
               <Wish title="ASUS ROG Strix B550-E" date="Feb 21, 2022" desc="AM4 socket, ATX, supports up to 4400MHz DDR4" link="https://www.komplett.no/product/1159991?noredirect=true"/>
