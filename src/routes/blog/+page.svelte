@@ -3,8 +3,10 @@
 </script>
   
 <h2 class=" text-4xl text-yellow-500 mb-6 text-center">Blog</h2>
-<BlogLink link="/blog/what-inspired-my-portfolio" title="What inspired my portfolio?" date="17 Jan, 2025" desc="I've always thought the idea of a personal website/portfolio was super cool."/>
-
+<BlogLink link="/blog" title="The start of my homelab journey" date="01 Jul, 2025" desc="Work in progress"/>
+<BlogLink link="/blog" title="Building a new PC (and homelab)!" date="01 Jul, 2025" desc="Work in progress"/>
+<BlogLink link="/blog/what-inspired-my-portfolio" title="What inspired my portfolio?" date="01 Jul, 2025" desc="I've always thought the idea of a personal website/portfolio was cool, so i decided to make one as a side project. This site is purely for fun and to test out some of my skills, as well as showcasing what i've learned so far."/>
+<!-- Copypasta for a quick start to the blogpost -->
 
 <!-- <script lang="ts">
     import Image from "$lib/components/blog-components/image.svelte";
