@@ -4,7 +4,6 @@
     import Paragraph from "$lib/components/blog-components/paragraph.svelte";
     import Title from "$lib/components/blog-components/title.svelte";
     import Undertitle from "$lib/components/blog-components/undertitle.svelte";
-
 </script>
   
 <Title title="What inspired my portfolio?"/>
@@ -47,10 +46,10 @@
 <Paragraph>
     <p>
         In the start i wanted to use every text color in Minecraft. 
-        They have 4 main text colors that represent the rarity of the item. 
+        They have 4 main text colors that represent the rarity of an item. 
         The colors are white, yellow, cyan and pink.
         For me, who is terrible at design, these colors were extremely hard to use together.
-        So i decided to only use the blocky design instead, and i belive it turned out well enough i belive.
+        So i decided to only use the blocky design instead, and i belive it turned out well enough.
     </p>
 </Paragraph>
 <Paragraph>
@@ -85,7 +84,7 @@
         Unfortunetly it did'nt really work out when i made the Blog route.
         Here i had to come up with something new, is what i first thought atleast.
         I'm still just as lazy, so i just reused the box from the small section under my name on the front page and added some small changes to it.
-        However, the actaul page with the blogpost was harder to just copy & paste.
+        However, the actual page with the blogpost was harder to just copy & paste.
         At first i began thinking about using a cms, like sanity, but quickly decided that plain and simple was easier and faster (I might still add it later as another side project).
         So i began looking for inspiration, mostly at blogs that were already established, but none really fit my theme.
         Therefore i just stole some of the different components and designed my own blog around them.
