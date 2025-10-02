@@ -3,7 +3,7 @@
     import Wish from "$lib/components/wish.svelte";
   </script>
   
-  <main class=" text-white py-56 flex w-full h-full px-3 relative breakpoint:flex-col breakpoint:items-center breakpoint:py-10">
+  <main class=" text-white py-20 flex w-full h-full px-3 relative breakpoint:flex-col breakpoint:items-center breakpoint:py-10">
       <SideProfile />
       <div class=" flex flex-col items-start w-7/12  h-full px-5 breakpoint:w-fit breakpoint:items-center">
   

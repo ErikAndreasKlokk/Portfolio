@@ -26,40 +26,38 @@
     let isOnWishlist: boolean = false
     let isOnBlog: boolean = false
     let isOnHomeOffice: boolean = false
-    
-    
+    let isOnPhotos: boolean = false
+
     function URL_color_changer(url_check: string) {
+        isOnHome = false
+        isOnWishlist = false
+        isOnBlog = false
+        isOnHomeOffice = false
+        isOnPhotos = false
         if (url_check === "/") {
-            isOnWishlist = false
-            isOnBlog = false
-            isOnHomeOffice = false
             openMenu = false
             menuWidth = "0px"
             return isOnHome = true
         }
         if (url_check === "/wishlist") {
-            isOnHome = false
-            isOnBlog = false
-            isOnHomeOffice = false
             openMenu = false
             menuWidth = "0px"
             return isOnWishlist = true
         } 
         if (url_check === "/blog") {
-            isOnHome = false
-            isOnWishlist = false
-            isOnHomeOffice = false
             openMenu = false
             menuWidth = "0px"
             return isOnBlog = true
         }
         if (url_check === "/homeoffice") {
-            isOnWishlist = false
-            isOnBlog = false
-            isOnHome = false
             openMenu = false
             menuWidth = "0px"
             return isOnHomeOffice = true
+        }
+        if (url_check === "/photos") {
+            openMenu = false
+            menuWidth = "0px"
+            return isOnPhotos = true
         }
     }
     
@@ -92,23 +90,28 @@
             </div>
             <ul class=" ml-7 mt-8 ">
                 <li class=" relative mb-2">
-                    <div class=" after:content-[''] after:bg-yellow-500 after:absolute after:block after:w-3 after:h-[6px] after:-left-6 after:top-2 after:border-y-[2px] after:border-white before:content-[''] before:h-[2px] before:bg-white before:top-[10px] before:-left-[26px] before:absolute before:block before:w-4">
+                    <div class=" after:content-[''] after:bg-yellow-500 after:absolute after:block after:w-3 after:h-[6px] after:-left-6 after:top-3 after:border-y-[2px] after:border-white before:content-[''] before:h-[2px] before:bg-white before:top-[14px] before:-left-[26px] before:absolute before:block before:w-4">
                         <a href="/" class=" underline text-lg {isOnHome ? "text-yellow-500" : ""}">Home</a>
                     </div>
                 </li>
                 <li class=" relative mb-2">
-                    <div class=" after:content-[''] after:bg-yellow-500 after:absolute after:block after:w-3 after:h-[6px] after:-left-6 after:top-2 after:border-y-[2px] after:border-white before:content-[''] before:h-[2px] before:bg-white before:top-[10px] before:-left-[26px] before:absolute before:block before:w-4">
+                    <div class=" after:content-[''] after:bg-yellow-500 after:absolute after:block after:w-3 after:h-[6px] after:-left-6 after:top-3 after:border-y-[2px] after:border-white before:content-[''] before:h-[2px] before:bg-white before:top-[14px] before:-left-[26px] before:absolute before:block before:w-4">
                         <a href="/blog" class=" underline text-lg {isOnBlog ? "text-yellow-500" : ""}">Blog</a>
                     </div>
                 </li>
                 <li class=" relative mb-2">
-                    <div class=" after:content-[''] after:bg-yellow-500 after:absolute after:block after:w-3 after:h-[6px] after:-left-6 after:top-2 after:border-y-[2px] after:border-white before:content-[''] before:h-[2px] before:bg-white before:top-[10px] before:-left-[26px] before:absolute before:block before:w-4">
+                    <div class=" after:content-[''] after:bg-yellow-500 after:absolute after:block after:w-3 after:h-[6px] after:-left-6 after:top-3 after:border-y-[2px] after:border-white before:content-[''] before:h-[2px] before:bg-white before:top-[14px] before:-left-[26px] before:absolute before:block before:w-4">
                         <a href="/wishlist" class=" underline text-lg {isOnWishlist ? "text-yellow-500" : ""}">Wishlist</a>
                     </div>
                 </li>
                 <li class=" relative mb-2">
-                    <div class=" after:content-[''] after:bg-yellow-500 after:absolute after:block after:w-3 after:h-[6px] after:-left-6 after:top-2 after:border-y-[2px] after:border-white before:content-[''] before:h-[2px] before:bg-white before:top-[10px] before:-left-[26px] before:absolute before:block before:w-4">
+                    <div class=" after:content-[''] after:bg-yellow-500 after:absolute after:block after:w-3 after:h-[6px] after:-left-6 after:top-3 after:border-y-[2px] after:border-white before:content-[''] before:h-[2px] before:bg-white before:top-[14px] before:-left-[26px] before:absolute before:block before:w-4">
                         <a href="/homeoffice" class=" underline text-lg {isOnHomeOffice ? "text-yellow-500" : ""}">Home Office</a>
+                    </div>
+                </li>
+                <li class=" relative mb-2">
+                    <div class=" after:content-[''] after:bg-yellow-500 after:absolute after:block after:w-3 after:h-[6px] after:-left-6 after:top-3 after:border-y-[2px] after:border-white before:content-[''] before:h-[2px] before:bg-white before:top-[14px] before:-left-[26px] before:absolute before:block before:w-4">
+                        <a href="/photos" class=" underline text-lg {isOnPhotos ? "text-yellow-500" : ""}">Photos</a>
                     </div>
                 </li>
             </ul>
