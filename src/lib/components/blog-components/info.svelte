@@ -1,7 +1,11 @@
 <script lang="ts">
-    export let createdDate: string;
-    export let lastUpdatedDate: string;
-    export let author: string;
+    interface Props {
+        createdDate: string;
+        lastUpdatedDate: string;
+        author: string;
+    }
+
+    let { createdDate, lastUpdatedDate, author }: Props = $props();
 </script>
 
 <div class=" flex gap-5 mb-6 w-full justify-center">

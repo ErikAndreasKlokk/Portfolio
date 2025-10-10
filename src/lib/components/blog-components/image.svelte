@@ -1,7 +1,13 @@
 <script lang="ts">
-    export let src: string;
+    import type { Picture } from 'vite-imagetools';
+
+    interface Props {
+        src: Picture;
+    }
+
+    let { src }: Props = $props();
 </script>
 
-<div class=" max-w-full h-80 max-h-80 my-3 flex justify-center">
-    <img class=" h-full max-h-full" src={src} alt={src} loading="lazy">
+<div class=" max-w-full h-80 max-h-80 my-5 flex justify-center items-center">
+    <enhanced:img class=" w-full" src={src} alt="image1" loading="lazy" />
 </div>

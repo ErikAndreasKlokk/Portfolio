@@ -4,6 +4,15 @@
     import Expandedu from "$lib/components/expandedu.svelte";
     import SideProfile from "$lib/components/sideProfile.svelte";
 
+    import imgUrlSvelte from "$lib/assets/svelte.svg"
+    import imgUrlTailwind from "$lib/assets/tailwind.svg"
+    import imgUrlReact from "$lib/assets/react.svg"
+    import imgUrlTypeScript from "$lib/assets/react.svg"
+    import imgUrlJava from "$lib/assets/react.svg"
+    import imgUrlGit from "$lib/assets/react.svg"
+    import imgUrlKubernetes from "$lib/assets/react.svg"
+    import imgUrlDocker from "$lib/assets/react.svg"
+
 </script>
 
 <main class=" text-white py-20 flex w-full h-full px-3 relative breakpoint:flex-col breakpoint:items-center breakpoint:py-10">
@@ -18,14 +27,14 @@
         <div class=" flex w-full items-center flex-col mt-10">
             <h2 class=" text-4xl text-yellow-500 mb-6 text-center">Skills and technologies</h2>
             <div class=" w-full relative pb-5 flex gap-2 flex-wrap">
-                <Skill skill="Svelte" imgURL="/svelte.svg" />
-                <Skill skill="Tailwind CSS" imgURL="/tailwind.svg" />
-                <Skill skill="React" imgURL="/react.svg" />
-                <Skill skill="TypeScript" imgURL="/typescript.svg" />
-                <Skill skill="Java" imgURL="/java.svg" />
-                <Skill skill="Git" imgURL="/git.svg" />
-                <Skill skill="Kubernetes" imgURL="/kubernetes.svg" />
-                <Skill skill="Docker" imgURL="/docker.svg" />
+                <Skill skill="Svelte" imgURL={imgUrlSvelte} />
+                <Skill skill="Tailwind CSS" imgURL={imgUrlTailwind} />
+                <Skill skill="React" imgURL={imgUrlReact} />
+                <Skill skill="TypeScript" imgURL={imgUrlTypeScript} />
+                <Skill skill="Java" imgURL={imgUrlJava} />
+                <Skill skill="Git" imgURL={imgUrlGit} />
+                <Skill skill="Kubernetes" imgURL={imgUrlKubernetes} />
+                <Skill skill="Docker" imgURL={imgUrlDocker} />
             </div>
         </div>
         <div class=" flex w-full items-center flex-col mt-10">

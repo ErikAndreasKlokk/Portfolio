@@ -1,9 +1,21 @@
 <script lang="ts">
-    export let title: string;
-    export let desc: string;
-    export let link: string = "";
-    export let date: string | Date = "";
-    export let isLast: boolean = false;
+    interface Props {
+        title: string;
+        desc: string;
+        link?: string;
+        date?: string | Date;
+        isLast?: boolean;
+    }
+
+    let {
+        title,
+        desc,
+        link = "",
+        date = "",
+        isLast = false
+    }: Props = $props();
+
+    import arrowImg from "$lib/assets/arrow.svg"
 </script>
 
 <div class=" w-full relative {isLast ? "" : "pb-5"}">
@@ -16,7 +28,7 @@
             {#if link !== ""}
                 <div>
                     <a href={link} target="_blank">
-                        <img class=" h-7" src="arrow.svg" alt="page for wish">
+                        <img class=" h-7" src={arrowImg} alt="page for item">
                     </a>
                 </div>
             {/if}

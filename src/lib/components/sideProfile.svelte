@@ -1,12 +1,17 @@
 <script lang="ts">
-    import { page } from '$app/stores';
+    import { page } from '$app/state';
     import Borderbox from "./borderbox.svelte";
+    import locationImg from "$lib/assets/location.svg"
+    import mailImg from "$lib/assets/mail.svg"
+    import githubImg from "$lib/assets/github.svg"
+    import linkedinImg from "$lib/assets/linkedin.svg"
+    import steamImg from "$lib/assets/steam.svg"
 
-    let isOnWishlist: boolean = false
-    let isOnBlog: boolean = false
-    let isOnHome: boolean = false
-    let isOnHomeOffice: boolean = false
-    let isOnPhotos: boolean = false
+    let isOnWishlist: boolean = $state(false)
+    let isOnBlog: boolean = $state(false)
+    let isOnHome: boolean = $state(false)
+    let isOnHomeOffice: boolean = $state(false)
+    let isOnPhotos: boolean = $state(false)
 
     function URL_color_changer(url_check: string) {
         if (url_check === "/wishlist") {
@@ -26,7 +31,7 @@
         }
     }
 
-    URL_color_changer($page.url.pathname)
+    URL_color_changer(page.url.pathname)
 </script>
 
 <div class=" flex flex-col {isOnHome ? "w-1/2 " : "w-1/6 "} h-fit sticky px-5 top-20 breakpoint:static breakpoint:mb-5 breakpoint:items-center breakpoint:w-fit">
@@ -38,21 +43,21 @@
             <div class="  flex flex-col  rounded-md px-3 py-1 w-96 breakpoint:w-full breakpoint:my-1">
                 <div class=" flex justify-between ">
                     <p class=" flex text-white/60 text-sm gap-1 items-center">
-                        <img class=" h-4" src="/location.svg" alt="location">
+                        <img class=" h-4" src={locationImg} alt="location">
                         Oslo, Norway
                     </p>
                     <div class=" flex gap-4 py-2">
                         <a href="mailto:eaklokk@gmail.com">
-                            <img class=" h-6" src="/mail.svg" alt="new mail">
+                            <img class=" h-6" src={mailImg} alt="new mail">
                         </a>
                         <a target="_blank" href="https://github.com/ErikAndreasKlokk">
-                            <img class=" h-6" src="/github.svg" alt="github link">
+                            <img class=" h-6" src={githubImg} alt="github link">
                         </a>
                         <a target="_blank" href="https://www.linkedin.com/in/erik-andreas-klokk-5415882a0/">
-                            <img class=" h-6" src="/linkedin.svg" alt="linkedin link">
+                            <img class=" h-6" src={linkedinImg} alt="linkedin link">
                         </a>
                         <a target="_blank" href="https://steamcommunity.com/profiles/76561198848256576/">
-                            <img class=" h-6" src="/steam.svg" alt="steam link">
+                            <img class=" h-6" src={steamImg} alt="steam link">
                         </a>
                     </div>
                 </div>

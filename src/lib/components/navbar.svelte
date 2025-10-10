@@ -1,9 +1,11 @@
 <script lang="ts">
+    import { run } from 'svelte/legacy';
+    import arrowImg from "$lib/assets/arrow.svg"
     import { page } from '$app/stores';
     import autoAnimate from '@formkit/auto-animate';
     import { navigating } from '$app/stores';
 
-    let openMenu: boolean = false;
+    let openMenu: boolean = $state(false);
     let menuWidth: string = "0px"
 
     function URL_blog_adder(url_check: string) {
@@ -22,11 +24,11 @@
         }
     }
     
-    let isOnHome: boolean = false
-    let isOnWishlist: boolean = false
-    let isOnBlog: boolean = false
-    let isOnHomeOffice: boolean = false
-    let isOnPhotos: boolean = false
+    let isOnHome: boolean = $state(false)
+    let isOnWishlist: boolean = $state(false)
+    let isOnBlog: boolean = $state(false)
+    let isOnHomeOffice: boolean = $state(false)
+    let isOnPhotos: boolean = $state(false)
 
     function URL_color_changer(url_check: string) {
         isOnHome = false
@@ -61,11 +63,15 @@
         }
     }
     
-    let isBlogSlug = URL_blog_adder($page.url.pathname)
+    let isBlogSlug = $state(URL_blog_adder($page.url.pathname))
     
     URL_color_changer($page.url.pathname)
-    $: if($navigating) URL_color_changer($page.url.pathname);
-    $: if($navigating) isBlogSlug = URL_blog_adder($page.url.pathname);
+    run(() => {
+        if($navigating) URL_color_changer($page.url.pathname);
+    });
+    run(() => {
+        if($navigating) isBlogSlug = URL_blog_adder($page.url.pathname);
+    });
 </script>
 
 <nav class=" w-full h-14 hidden {isBlogSlug ? "justify-between" : "justify-end"} items-center breakpoint:flex px-3 ">
@@ -73,8 +79,8 @@
         <a class=" text-white text-lg underline" href="/blog">{"<"} blog</a>
     {/if}
     {#if !openMenu}
-        <button on:click={() => openMenuFunc()}>
-            <img class=" h-7 {openMenu ? "rotate-45" : "rotate-[225deg]"} " src="/arrow.svg" alt="">
+        <button onclick={() => openMenuFunc()}>
+            <img class=" h-7 {openMenu ? "rotate-45" : "rotate-[225deg]"} " src={arrowImg} alt="">
         </button>
     {/if}
 </nav>
@@ -83,8 +89,8 @@
         <div class=" text-white w-72 border-l border-white/60 bg-black pl-5">
             <div class=" w-full h-14 flex items-center">
                 {#if openMenu}
-                    <button on:click={() => openMenuFunc()}>
-                        <img class=" h-7 {openMenu ? "rotate-45" : "rotate-[225deg]"} " src="/arrow.svg" alt="">
+                    <button onclick={() => openMenuFunc()}>
+                        <img class=" h-7 {openMenu ? "rotate-45" : "rotate-[225deg]"} " src={arrowImg} alt="">
                     </button>
                 {/if}
             </div>
