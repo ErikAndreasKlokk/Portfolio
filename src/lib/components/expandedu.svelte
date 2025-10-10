@@ -1,9 +1,12 @@
 <script>
-    export let title;
-    export let date;
-    export let learned;
-    export let desc;
-    export let isLast = false;
+    /** @type {{title: string, date: any, learned: any, desc: any, isLast?: boolean}} */
+    let {
+        title,
+        date,
+        learned,
+        desc,
+        isLast = false
+    } = $props();
 </script>
 
 <div class=" w-full relative {isLast ? "" : "pb-5"}">
