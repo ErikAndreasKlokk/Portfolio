@@ -7,11 +7,11 @@
     import imgUrlSvelte from "$lib/assets/svelte.svg"
     import imgUrlTailwind from "$lib/assets/tailwind.svg"
     import imgUrlReact from "$lib/assets/react.svg"
-    import imgUrlTypeScript from "$lib/assets/react.svg"
-    import imgUrlJava from "$lib/assets/react.svg"
-    import imgUrlGit from "$lib/assets/react.svg"
-    import imgUrlKubernetes from "$lib/assets/react.svg"
-    import imgUrlDocker from "$lib/assets/react.svg"
+    import imgUrlTypeScript from "$lib/assets/typescript.svg"
+    import imgUrlJava from "$lib/assets/java.svg"
+    import imgUrlGit from "$lib/assets/git.svg"
+    import imgUrlKubernetes from "$lib/assets/kubernetes.svg"
+    import imgUrlDocker from "$lib/assets/docker.svg"
 
 </script>
 
@@ -40,7 +40,7 @@
         <div class=" flex w-full items-center flex-col mt-10">
             <h2 class=" text-4xl text-yellow-500 mb-6">About me</h2>
             <div class=" w-full relative pb-5 flex gap-2 flex-wrap">
-                <p class=" text-lg">Right now im a fullstack web developer at Statens Pensjonskasse in Oslo, Norway. Im a nerd who loves problem solving and difficult tasks. In my free time i play videogames such as Valorant and CS2, i watch some shows and movies, and i enjoy strength training.</p>
+                <p class=" text-lg">Right now I'm a fullstack web developer at Statens Pensjonskasse in Oslo, Norway. I'm a nerd who loves problem solving and difficult tasks. In my free time I play videogames such as Valorant and CS2, I watch some shows and movies, and I enjoy strength training.</p>
             </div>
         </div>
         <div class=" flex w-full items-center flex-col mt-10">
