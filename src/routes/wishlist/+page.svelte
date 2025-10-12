@@ -9,7 +9,7 @@
         
         <div class=" flex w-full items-center flex-col">
             <h2 class=" text-4xl text-yellow-500 mb-6 text-center">Wishlist</h2>
-            <Wish isLast={true} title="Usb hub" desc="Usb hub with both usb-a's and usb-c's" date="Apr 15, 2025"/>
+            <Wish isLast={true} title="SM7B Microphone" desc="A shure sm7b microphone" date="Oct 12, 2025"/>
             <!-- <Wish title="" desc="" date="Nov 13, 2024" link=""/> -->
         </div>
 
