@@ -12,6 +12,7 @@
 
 <svelte:head >
     <title>Erik Andreas Klokk</title>
+    <meta name="description" content="Erik Andreas Klokk's personal website. Learn about my interests, hobbies and projects!">
 </svelte:head>
 
 <div class=" max-w-[1200px] w-full breakpoint:max-w-[600px]">
