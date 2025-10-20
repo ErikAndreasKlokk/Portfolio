@@ -13,6 +13,10 @@
     import imgUrlKubernetes from "$lib/assets/kubernetes.svg"
     import imgUrlDocker from "$lib/assets/docker.svg"
 
+    import type { PageProps } from './$types';
+
+	let { data }: PageProps = $props();
+
 </script>
 
 <main class=" text-white py-20 flex w-full h-full px-3 relative breakpoint:flex-col breakpoint:items-center breakpoint:py-10">
@@ -46,11 +50,27 @@
         <div class=" flex w-full items-center flex-col mt-10">
             <h2 class=" text-4xl text-yellow-500 mb-6">Projects</h2>
             <div class=" w-full relative pb-5 flex flex-col breakpoint:w-fit breakpoint:items-center">
-                <Project projectName="Budgeting" />
-                <Project projectName="homelab" />
-                <Project projectName="Portfolio" />
-                <Project projectName="RomBooking" />
-                <Project projectName="Gammel-Portfolio" isLast={true} />
+                {#each data.projects as project, i}
+                    {#if data.projects.length === 0}
+                        <div class=" w-full relative">
+                            <div class=" after:content-[''] after:bg-yellow-500 after:absolute after:block after:w-3 after:h-3 after:-left-6 after:top-2 after:border-[2px] after:border-white before:content-[''] before:absolute before:w-[2px] before:bg-white before:block before:h-full before:top-2 before:-left-[19px]">
+                                <div class=" flex justify-between items-center mb-2">
+                                    <div>
+                                        <div class=" w-40 h-7 animate-pulse bg-zinc-900 rounded-md mb-2"></div>
+                                        <div class=" w-32 h-4 animate-pulse bg-zinc-900 rounded-md"></div>
+                                    </div>
+                                    <div class=" flex gap-3">
+                                        <div class=" h-8 w-8 animate-pulse bg-zinc-900 rounded-md"></div>
+                                        <div class=" h-8 w-8 animate-pulse bg-zinc-900 rounded-md"></div>
+                                        <div class=" h-8 w-8 animate-pulse bg-zinc-900 rounded-md"></div>
+                                    </div>
+                                </div>
+                                <div class=" h-12 animate-pulse bg-zinc-900 rounded-md"></div>
+                            </div>
+                        </div>
+                    {/if}
+                    <Project {project} isLast={i === data.projects.length-1 ? true : false}/>
+                {/each}
             </div>
         </div>
     </div>
