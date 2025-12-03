@@ -79,7 +79,8 @@
 </Paragraph>
 <Paragraph>
         The first thing to do is download the Talos ISO image. 
-        Either create your own image from <Link href="https://factory.talos.dev/">https://factory.talos.dev/</Link> or download the image i use <Link href="/metal-amd64.iso" downloadBool={true}>metal-amd64.iso</Link>.
+        Create your own image from <Link href="https://factory.talos.dev/">https://factory.talos.dev/</Link> with the plugins you want.
+        I use cloudflared a qemu guest agent for example.
 </Paragraph>
 <Paragraph>
         Now head over to your proxmox window and upload the ISO image. 
