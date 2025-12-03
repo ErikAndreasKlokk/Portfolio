@@ -1,7 +1,7 @@
 <script lang="ts">
     import Skill from "$lib/components/skill.svelte";
     import Project from "$lib/components/project.svelte";
-    import Expandedu from "$lib/components/expandedu.svelte";
+    import Expandedu from "$lib/components/expAndEdu.svelte";
     import SideProfile from "$lib/components/sideProfile.svelte";
 
     import imgUrlSvelte from "$lib/assets/svelte.svg"
@@ -75,7 +75,7 @@
         </div>
     </div>
     <div class=" fixed bottom-5 left-5 text-sm text-white/70 breakpoint:static breakpoint:mt-10">
-        <p>Erik Andreas Klokk © 2024</p>
+        <p>Erik Andreas Klokk © {new Date().getFullYear()}</p>
         <p>Contact: eaklokk@gmail.com</p>
     </div>
 </main>

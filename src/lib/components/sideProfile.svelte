@@ -13,6 +13,21 @@
     let isOnHomeOffice: boolean = $state(false)
     let isOnPhotos: boolean = $state(false)
 
+    function calculateAge(): number {
+        const birthDate = new Date('2006-02-13');
+        const today = new Date();
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const monthDiff = today.getMonth() - birthDate.getMonth();
+        
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        
+        return age;
+    }
+
+    const age = calculateAge();
+
     function URL_color_changer(url_check: string) {
         if (url_check === "/wishlist") {
             return isOnWishlist = true
@@ -61,7 +76,7 @@
                         </a>
                     </div>
                 </div>
-                <p class=" text-lg my-1">19 year old frontend web developer working at Statens Pensjonskasse.</p>
+                <p class=" text-lg my-1">{age} year old fullstack developer working at Statens Pensjonskasse.</p>
             </div>
         </Borderbox> 
     {/if}
