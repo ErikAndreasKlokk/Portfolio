@@ -28,7 +28,7 @@
             <Expandedu title="Elvebakken VGS" desc="Student at Elvebakken VGS, Informational technology (IT2)" learned="Svelte, TypeScript, NextJS" date="August 2023 - June 2024"/>
             <Expandedu isLast={true} title="Kuben VGS" desc="Student at Kuben VGS, Informational technology & Media production (IM1)" learned="HTML, CSS, JavaScript, Video editing" date="August 2022 - June 2023"/>
         </div>
-        <div class=" flex w-full items-center flex-col mt-10">
+        <div class=" flex w-full items-center flex-col mt-16">
             <h2 class=" text-4xl text-yellow-500 mb-6 text-center">Skills and technologies</h2>
             <div class=" w-full relative pb-5 flex gap-2 flex-wrap">
                 <Skill skill="Svelte" imgURL={imgUrlSvelte} />
@@ -41,13 +41,13 @@
                 <Skill skill="Docker" imgURL={imgUrlDocker} />
             </div>
         </div>
-        <div class=" flex w-full items-center flex-col mt-10">
+        <div class=" flex w-full items-center flex-col mt-16">
             <h2 class=" text-4xl text-yellow-500 mb-6">About me</h2>
             <div class=" w-full relative pb-5 flex gap-2 flex-wrap">
                 <p class=" text-lg">Right now I'm a fullstack web developer at Statens Pensjonskasse in Oslo, Norway. I'm a nerd who loves problem solving and difficult tasks. In my free time I play videogames such as Valorant and CS2, I watch some shows and movies, and I enjoy strength training.</p>
             </div>
         </div>
-        <div class=" flex w-full items-center flex-col mt-10">
+        <div class=" flex w-full items-center flex-col mt-16">
             <h2 class=" text-4xl text-yellow-500 mb-6">Projects</h2>
             <div class=" w-full relative pb-5 flex flex-col breakpoint:w-fit breakpoint:items-center">
                 {#each data.projects as project, i}

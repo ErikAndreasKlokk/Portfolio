@@ -4,10 +4,16 @@
     let { children } = $props();
 </script>
 
+<svelte:head >
+    <title>Erik Andreas Klokk's Blog</title>
+    <meta name="description" content="Erik Andreas Klokk's personal blog. Read about my current and former projects!">
+    <link rel="icon" href="/favicon.png" />    
+</svelte:head>
+
 <div class=" max-w-[1200px] w-full breakpoint:max-w-[600px] min-h-screen">
       <main class=" text-white py-20 flex w-full min-h-full px-3 relative breakpoint:flex-col breakpoint:items-center breakpoint:py-10">
             <SideProfile />
-            <div class=" flex flex-col items-start w-7/12 h-full px-5 breakpoint:w-fit breakpoint:items-center">
+            <div class=" flex flex-col items-start w-7/12 h-full px-5 breakpoint:w-fit breakpoint:max-w-[600px] breakpoint:items-center">
                 <div class=" flex w-full flex-col">
                     {@render children?.()}
                 </div>

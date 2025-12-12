@@ -49,12 +49,12 @@
     URL_color_changer(page.url.pathname)
 </script>
 
-<div class=" flex flex-col {isOnHome ? "w-1/2 " : "w-1/6 "} h-fit sticky px-5 top-20 breakpoint:static breakpoint:mb-5 breakpoint:items-center breakpoint:w-fit">
+<div class=" flex flex-col {isOnHome ? "w-1/2 " : "w-1/6 "} h-fit sticky px-5 top-20 breakpoint:static breakpoint:mb-12 breakpoint:items-center breakpoint:w-fit">
     {#if isOnHome}
-        <h1 class=" font-bold text-6xl mb-4 breakpoint:text-center ">
+        <h1 class=" font-bold text-6xl mb-12 breakpoint:text-center ">
             <a href="/">ERIK ANDREAS KLOKK</a>
         </h1>
-        <Borderbox> 
+        <Borderbox>
             <div class="  flex flex-col  rounded-md px-3 py-1 w-96 breakpoint:w-full breakpoint:my-1">
                 <div class=" flex justify-between ">
                     <p class=" flex text-white/60 text-sm gap-1 items-center">
@@ -78,9 +78,9 @@
                 </div>
                 <p class=" text-lg my-1">{age} year old fullstack developer working at Statens Pensjonskasse.</p>
             </div>
-        </Borderbox> 
+        </Borderbox>
     {/if}
-    <ul class=" ml-7 mt-8 absolute top-60 block breakpoint:hidden">
+    <ul class=" ml-7 {!isOnHome ? "mt-[328px]" : "mt-12"} block breakpoint:hidden">
         <li class=" relative mb-2">
             <div class=" after:content-[''] after:bg-yellow-500 after:absolute after:block after:w-3 after:h-[6px] after:-left-6 after:top-3 after:border-y-[2px] after:border-white before:content-[''] before:h-[2px] before:bg-white before:top-[14px] before:-left-[26px] before:absolute before:block before:w-4">
                 <a href="/" class=" underline text-lg {isOnHome ? "text-yellow-500" : ""}">Home</a>

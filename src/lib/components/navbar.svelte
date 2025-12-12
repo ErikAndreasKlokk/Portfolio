@@ -1,6 +1,7 @@
 <script lang="ts">
     import { run } from 'svelte/legacy';
-    import arrowImg from "$lib/assets/arrow.svg"
+    import menuImg from "$lib/assets/menu.svg"
+    import closeImg from "$lib/assets/close.svg"
     import { page } from '$app/stores';
     import autoAnimate from '@formkit/auto-animate';
     import { navigating } from '$app/stores';
@@ -13,7 +14,6 @@
             return true
         } 
     }
-
     
     function openMenuFunc() {
         openMenu = !openMenu
@@ -80,7 +80,7 @@
     {/if}
     {#if !openMenu}
         <button onclick={() => openMenuFunc()}>
-            <img class=" h-7 {openMenu ? "rotate-45" : "rotate-[225deg]"} " src={arrowImg} alt="">
+            <img class=" h-7" src={menuImg} alt="">
         </button>
     {/if}
 </nav>
@@ -90,7 +90,7 @@
             <div class=" w-full h-14 flex items-center">
                 {#if openMenu}
                     <button onclick={() => openMenuFunc()}>
-                        <img class=" h-7 {openMenu ? "rotate-45" : "rotate-[225deg]"} " src={arrowImg} alt="">
+                        <img class=" h-7 " src={closeImg} alt="">
                     </button>
                 {/if}
             </div>
