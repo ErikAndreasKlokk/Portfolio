@@ -40,7 +40,10 @@
         playitAgentTokenSecret,
         playitAgentTokenSealed,
         applyPlayit,
-        getServiceIP
+        getServiceIP,
+
+        resetArgoApplicationsController
+
 } from "$lib/components/blog-components/how-i-set-up-my-homelab-codes";
     import Info from "$lib/components/blog-components/info.svelte";
     import Link from "$lib/components/blog-components/Link.svelte";
@@ -285,6 +288,12 @@
 </Borderbox>
 <Borderbox widthFull={true} marginY="my-5">
         <Code codeObject={applyApplications}/>
+</Borderbox>
+<Paragraph>
+        If you encounter any errors with argo when you try to use the gui, try reseting the application controller with this command.
+</Paragraph>
+<Borderbox widthFull={true} marginY="my-5">
+        <Code codeObject={resetArgoApplicationsController}/>
 </Borderbox>
 <Paragraph>
         Furthermore, if you want to deploy applications that uses tcp or udp traffic (eg. Minecraft), you can use <Link href="https://playit.gg">playit.gg</Link>. 

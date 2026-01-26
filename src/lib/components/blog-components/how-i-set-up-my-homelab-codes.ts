@@ -376,6 +376,12 @@ export const applyApplications: CodeObject = {
     lang: "bash"
 }
 
+export const resetArgoApplicationsController: CodeObject = {
+    code: `kubectl -n argocd rollout restart statefulset argocd-application-controller`,
+    highlights: [],
+    lang: "bash"
+}
+
 export const playitAgentTokenSecret: CodeObject = {
     code: `kubectl create secret generic playitgg-agent-token \
   --from-literal=agent-token=<Your agent token> \
