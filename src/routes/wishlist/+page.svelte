@@ -12,7 +12,7 @@
             <Wish isLast={true} title="SM7B Microphone" desc="A shure sm7b microphone" date="Oct 12, 2025"/>
             <!-- <Wish title="" desc="" date="Nov 13, 2024" link=""/> -->
         </div>
-
+<p class=" text-transparent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa laudantium sit quia modi expedita quaerat, dolores facilis iure quidem praesentium, voluptate earum ex, eius possimus cumque illum. Saepe, nobis in?</p>
     </div>
     <div class=" fixed bottom-5 left-5 text-sm text-white/70 breakpoint:static breakpoint:mt-10">
         <p>Erik Andreas Klokk © {new Date().getFullYear()}</p>

@@ -12,6 +12,7 @@
     let isOnHome: boolean = $state(false)
     let isOnHomeOffice: boolean = $state(false)
     let isOnPhotos: boolean = $state(false)
+    let isOnInvestments: boolean = $state(false)
 
     function calculateAge(): number {
         const birthDate = new Date('2006-02-13');
@@ -43,6 +44,9 @@
         }
         if (url_check === "/photos") {
             return isOnPhotos = true
+        }
+        if (url_check === "/investments") {
+            return isOnInvestments = true
         }
     }
 
@@ -104,6 +108,11 @@
         <li class=" relative mb-2">
             <div class=" after:content-[''] after:bg-yellow-500 after:absolute after:block after:w-3 after:h-[6px] after:-left-6 after:top-3 after:border-y-[2px] after:border-white before:content-[''] before:h-[2px] before:bg-white before:top-[14px] before:-left-[26px] before:absolute before:block before:w-4">
                 <a href="/photos" class=" underline text-lg {isOnPhotos ? "text-yellow-500" : ""}">Photos</a>
+            </div>
+        </li>
+        <li class=" relative mb-2">
+            <div class=" after:content-[''] after:bg-yellow-500 after:absolute after:block after:w-3 after:h-[6px] after:-left-6 after:top-3 after:border-y-[2px] after:border-white before:content-[''] before:h-[2px] before:bg-white before:top-[14px] before:-left-[26px] before:absolute before:block before:w-4">
+                <a href="/investments" class=" underline text-lg {isOnInvestments ? "text-yellow-500" : ""}">Investments</a>
             </div>
         </li>
     </ul>

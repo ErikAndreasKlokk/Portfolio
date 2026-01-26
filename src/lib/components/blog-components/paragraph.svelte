@@ -7,6 +7,6 @@
 
 </script>
 
-<p class=" text-base text-white my-4 leading-7 ">
+<p class=" text-base text-white my-4 leading-7 self-start">
     {@render children?.()}
 </p>
