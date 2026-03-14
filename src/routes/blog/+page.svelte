@@ -1,10 +1,18 @@
 <script lang="ts">
     import BlogLink from "$lib/components/blog-components/blogLink.svelte";
 </script>
-  
-<h2 class=" text-4xl text-yellow-500 mb-6 text-center">Blog</h2>
-<BlogLink link="/blog/how-i-set-up-my-homelab" title="How i set up my homelab" date="14 Nov, 2025" desc="Work in progress"/>
-<BlogLink link="/blog/what-inspired-my-portfolio" title="What inspired my portfolio?" date="01 Jul, 2025" desc="I've always thought the idea of a personal website/portfolio was cool, so i decided to make one as a side project. This site is purely for fun and to test out some of my skills, as well as showcasing what i've learned so far."/>
+
+<svelte:head>
+    <title>Erik Andreas Klokk's Blog</title>
+</svelte:head>
+
+<div class=" flex flex-col items-start w-7/12 h-full px-5 breakpoint:w-fit breakpoint:max-w-[600px] breakpoint:items-center">
+    <div class=" flex w-full flex-col">
+        <h2 class=" text-4xl text-yellow-500 mb-6 text-center">Blog</h2>
+        <BlogLink link="/blog/how-i-set-up-my-homelab" title="How i set up my homelab" date="14 Nov, 2025" desc="Work in progress"/>
+        <BlogLink link="/blog/what-inspired-my-portfolio" title="What inspired my portfolio?" date="01 Jul, 2025" desc="I've always thought the idea of a personal website/portfolio was cool, so i decided to make one as a side project. This site is purely for fun and to test out some of my skills, as well as showcasing what i've learned so far."/>
+    </div>
+</div>
 <!-- Copypasta for a quick start to the blogpost -->
 
 <!-- <script lang="ts">
