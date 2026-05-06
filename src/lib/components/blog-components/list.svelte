@@ -6,6 +6,6 @@
     let { children }: Props = $props();
 </script>
 
-<ol>
+<ol class="list-decimal text-white my-4 ml-5 space-y-2">
     {@render children?.()}
 </ol>

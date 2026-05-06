@@ -63,7 +63,7 @@
 <div class=" flex flex-col items-start w-7/12 h-full px-5 breakpoint:w-fit breakpoint:max-w-[600px] breakpoint:items-center">
     <div class=" flex w-full flex-col">
         <Title title="How i set up my homelab"/>
-        <Info author="Erik Andreas Klokk" createdDate="3 Dec, 2025" lastUpdatedDate="3 Dec, 2025"/>
+        <Info author="Erik Andreas Klokk" createdDate="3 Dec, 2025" lastUpdatedDate="6 May, 2026"/>
         <Paragraph>
                 Much like this personal website, I wanted a homelab to use as a playground so I could test and learn new things.
                 It took some time to gather the motivation to start, as it is a completely new and hard to learn field, but now that I've gotten into it, I'm really happy i did.
@@ -337,5 +337,6 @@
         <Paragraph>
                 You should now be able to reach your service!
         </Paragraph>
+        <p class=" text-sm text-gray-400">If there is anything i have missed, please let me know by sending me an <a class=" underline" href="mailto:eaklokk@gmail.com">email</a>! I'd love to hear your feedback and help if possible.</p>
     </div>
 </div>

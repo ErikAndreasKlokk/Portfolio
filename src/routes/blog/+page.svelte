@@ -9,7 +9,7 @@
 <div class=" flex flex-col items-start w-7/12 h-full px-5 breakpoint:w-fit breakpoint:max-w-[600px] breakpoint:items-center">
     <div class=" flex w-full flex-col">
         <h2 class=" text-4xl text-yellow-500 mb-6 text-center">Blog</h2>
-        <BlogLink link="/blog/how-i-set-up-my-homelab" title="How i set up my homelab" date="14 Nov, 2025" desc="Work in progress"/>
+        <BlogLink link="/blog/how-i-set-up-my-homelab" title="How i set up my homelab" date="6 May, 2026" desc="Much like this personal website, I wanted a homelab to use as a playground so I could test and learn new things. It took some time to gather the motivation to start, as it is a completely new and hard to learn field, but now that I've gotten into it, I'm really happy i did."/>
         <BlogLink link="/blog/what-inspired-my-portfolio" title="What inspired my portfolio?" date="01 Jul, 2025" desc="I've always thought the idea of a personal website/portfolio was cool, so i decided to make one as a side project. This site is purely for fun and to test out some of my skills, as well as showcasing what i've learned so far."/>
     </div>
 </div>
