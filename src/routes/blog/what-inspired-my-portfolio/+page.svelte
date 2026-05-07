@@ -4,6 +4,7 @@
     import Paragraph from "$lib/components/blog-components/paragraph.svelte";
     import Title from "$lib/components/blog-components/title.svelte";
     import Undertitle from "$lib/components/blog-components/undertitle.svelte";
+    import BlogNav from "$lib/components/blog-components/blogNav.svelte";
 
     import oldPortfolioImg from "$lib/assets/old_portfolio.png?enhanced"
 </script>
@@ -12,7 +13,7 @@
     <title>What inspired my portfolio? - Erik Andreas Klokk</title>
 </svelte:head>
 
-<div class=" flex flex-col items-start w-7/12 h-full px-5 breakpoint:w-fit breakpoint:max-w-[600px] breakpoint:items-center">
+<div class=" flex flex-col items-start w-7/12 h-full px-5 breakpoint:w-full breakpoint:items-center">
     <div class=" flex w-full flex-col">
         <Title title="What inspired my portfolio?"/>
         <Info author="Erik Andreas Klokk" createdDate="17 Jan, 2025" lastUpdatedDate="01 Jul, 2025"/>
@@ -89,3 +90,4 @@
         </Paragraph>
     </div>
 </div>
+<BlogNav />

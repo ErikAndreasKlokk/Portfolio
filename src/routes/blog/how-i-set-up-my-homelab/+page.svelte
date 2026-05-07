@@ -1,5 +1,6 @@
 <script lang="ts">
     import Code from "$lib/components/blog-components/code.svelte";
+    import BlogNav from "$lib/components/blog-components/blogNav.svelte";
     import { 
         setIPAddressForVM, 
         generateConfigs, 
@@ -60,7 +61,7 @@
     <title>How i set up my homelab - Erik Andreas Klokk</title>
 </svelte:head>
 
-<div class=" flex flex-col items-start w-7/12 h-full px-5 breakpoint:w-fit breakpoint:max-w-[600px] breakpoint:items-center">
+<div class=" flex flex-col items-start w-7/12 h-full px-5 breakpoint:w-full breakpoint:items-center">
     <div class=" flex w-full flex-col">
         <Title title="How i set up my homelab"/>
         <Info author="Erik Andreas Klokk" createdDate="3 Dec, 2025" lastUpdatedDate="6 May, 2026"/>
@@ -340,3 +341,4 @@
         <p class=" text-sm text-gray-400">If there is anything i have missed, please let me know by sending me an <a class=" underline" href="mailto:eaklokk@gmail.com">email</a>! I'd love to hear your feedback and help if possible.</p>
     </div>
 </div>
+<BlogNav />

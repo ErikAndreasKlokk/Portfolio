@@ -58,13 +58,7 @@
 {/snippet}
 
 <!-- Mobile nav bar -->
-<nav class=" w-full h-14 hidden {isBlogSlug || isPhotoSlug ? 'justify-between' : 'justify-end'} items-center breakpoint:flex px-3 ">
-    {#if isBlogSlug}
-        <a class=" text-white text-lg underline" href="/blog">{"<"} blog</a>
-    {/if}
-    {#if isPhotoSlug}
-        <a class=" text-white text-lg underline" href="/photos">{"<"} photos</a>
-    {/if}
+<nav class=" w-full h-14 hidden justify-end items-center breakpoint:flex px-3 ">
     {#if !openMenu}
         <button onclick={() => openMenu = true}>
             <img class=" h-7" src={menuImg} alt="menu">
@@ -91,7 +85,7 @@
 <!-- Desktop sidebar -->
 <div class=" flex flex-col {isOnHome ? 'w-1/2 ' : 'w-1/6 '} h-fit sticky px-5 top-20 breakpoint:static breakpoint:mb-12 breakpoint:items-center breakpoint:w-fit">
     {#if isOnHome}
-        <h1 class=" font-bold text-6xl mb-12 mt-12 breakpoint:text-center ">
+        <h1 class=" font-bold text-6xl mb-12 breakpoint:text-center ">
             <a href="/">ERIK ANDREAS KLOKK</a>
         </h1>
         <Borderbox>
