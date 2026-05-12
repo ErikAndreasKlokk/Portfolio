@@ -7,7 +7,11 @@ export default {
     screens: {
       breakpoint: {'max': '1100px'}
     },
-    extend: {}
+    extend: {
+      fontFamily: {
+        mono: ['Minecraft', 'monospace'],
+      },
+    }
   },
 
   plugins: []
