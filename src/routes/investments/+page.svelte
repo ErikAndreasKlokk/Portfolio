@@ -8,7 +8,7 @@
     // current beregnes daglig: units × live NAV
     // ===========================================================
     const fundHoldings = [
-        { name: 'Alfred Berg Global C', invested: 87000, units: 999.645, fallbackCurrent: 105776 },
+        { name: 'Alfred Berg Global C', invested: 87000, units: 218.53106444, fallbackCurrent: 109672 },
     ];
 
     // Beregn gjeldende fondverdi — live hvis NAV er tilgjengelig, ellers fallback
@@ -20,14 +20,21 @@
     // Legg til shares og avgCostUsd for live P&L-beregning
     // ===========================================================
     const stockHoldings: { symbol: string; shares: number; avgCostUsd: number }[] = [
-        { symbol: 'INTC', shares: 0,  avgCostUsd: 0 },  // TODO: fyll inn
-        { symbol: 'NVDA', shares: 0,  avgCostUsd: 0 },  // TODO: fyll inn
-        { symbol: 'MU',   shares: 0,  avgCostUsd: 0 },  // TODO: fyll inn
-        { symbol: 'AMD',  shares: 0,  avgCostUsd: 0 },  // TODO: fyll inn
+        { symbol: 'KITT', shares: 113, avgCostUsd: 3.92 },
     ];
 
     // Fallback NOK-verdier når aksjedata ikke er konfigurert
-    const stockFallback = { invested: 20000, current: 21518 };
+    const stockFallback = { invested: 4366, current: 4366 };
+
+    // Realiserte handler (alle lukket)
+    const closedPositions = [
+        { symbol: 'MU',   name: 'Micron Technology',       paidNok: 2988, receivedNok: 4270, date: '17.03.2026' },
+        { symbol: 'INTC', name: 'Intel',                    paidNok: 13914, receivedNok: 15447, date: '28.01.2026' },
+        { symbol: 'WDC',  name: 'Western Digital',          paidNok: 8073, receivedNok: 8472, date: '03.02.2026' },
+        { symbol: 'AMD',  name: 'Advanced Micro Devices',   paidNok: 13252, receivedNok: 13867, date: '13.04.2026' },
+        { symbol: 'NVDA', name: 'NVIDIA',                   paidNok: 5577, receivedNok: 5573, date: '15.04.2026' },
+    ];
+    const totalRealizedGain = closedPositions.reduce((s, p) => s + (p.receivedNok - p.paidNok), 0);
 
     const usdNok = data.usdNok ?? 10.7;
     const hasHoldingData = stockHoldings.some(h => h.shares > 0);
@@ -60,11 +67,17 @@
     const sGain    = stockCurrentNok - stockInvestedNok;
     const sGainPct = stockInvestedNok > 0 ? (sGain / stockInvestedNok) * 100 : 0;
 
+    // Total P&L på aksjekontoen: realisert + urealisert
+    const stockAccountTotalGain = totalRealizedGain + sGain;
+    // Totalt innskudd på aksjekontoen (aldri tatt ut)
+    const totalDeposited = 20000;
+    const stockAccountValue = totalDeposited + stockAccountTotalGain;
+
     // Globale totaler
     const totalFundsInvested = fundHoldings.reduce((s, f) => s + f.invested, 0);
     const totalFundsCurrent  = fundCurrentValues.reduce((s, v) => s + v, 0);
-    const totalInvested = totalFundsInvested + stockInvestedNok;
-    const totalCurrent  = totalFundsCurrent  + stockCurrentNok;
+    const totalInvested = totalFundsInvested + totalDeposited;
+    const totalCurrent  = totalFundsCurrent  + stockAccountValue;
     const totalGain     = totalCurrent - totalInvested;
     const totalGainPct  = (totalGain / totalInvested) * 100;
 
@@ -162,12 +175,30 @@
                 <span class="font-mono text-xs text-white/40">{stockHoldings.length} HOLDINGS</span>
             </div>
 
+            <!-- Samlet aksjekontooppsummering -->
+            <div class="py-3 border border-white/10 rounded-md px-4 mb-6 bg-white/[0.02]">
+                <div class="font-mono text-[10px] tracking-widest text-yellow-500/60 mb-2">ACCOUNT TOTAL</div>
+                <div class="text-2xl font-semibold tabular-nums text-white mb-2">{fmtNok(stockAccountValue)}</div>
+                <div class="flex items-end justify-between gap-4">
+                    <div class="font-mono text-xs text-white/35">
+                        <span class="text-white/20">Realized</span>&nbsp;
+                        <span class="{totalRealizedGain >= 0 ? 'text-green-400/70' : 'text-red-400/70'}">{totalRealizedGain >= 0 ? '+' : ''}{fmtNok(totalRealizedGain)}</span>
+                        &nbsp;·&nbsp;
+                        <span class="text-white/20">Unrealized</span>&nbsp;
+                        <span class="{sGain >= 0 ? 'text-green-400/70' : 'text-red-400/70'}">{sGain >= 0 ? '+' : ''}{fmtNok(sGain)}</span>
+                    </div>
+                    <div class="font-mono text-sm font-semibold tabular-nums {stockAccountTotalGain >= 0 ? 'text-green-400' : 'text-red-400'}">
+                        {stockAccountTotalGain >= 0 ? '+' : ''}{fmtNok(stockAccountTotalGain)}
+                    </div>
+                </div>
+            </div>
+
             <!-- Aggregert aksjetotal -->
             <div class="py-3 border-b border-white/10 mb-4">
                 <div class="flex items-start justify-between gap-4">
                     <div>
                         <div class="font-mono text-[10px] tracking-widest text-yellow-500/60 mb-0.5">PORTFOLIO TOTAL</div>
-                        <div class="font-mono text-xs text-white/55 mt-0.5">INTC · NVDA · MU · AMD</div>
+                        <div class="font-mono text-xs text-white/55 mt-0.5">KITT</div>
                         <div class="font-mono text-xs text-white/40 mt-0.5">Invested: {fmtNok(stockInvestedNok)}</div>
                     </div>
                     <div class="text-right flex-shrink-0">
@@ -212,7 +243,7 @@
                                 <!-- Antall aksjer og P&L (hvis holdings er konfigurert) -->
                                 {#if liveEntry && liveEntry.shares > 0}
                                     <div class="mt-1 pl-12 flex items-center justify-between font-mono text-[10px] text-white/35">
-                                        <span>{liveEntry.shares} stk · snitt {fmtUsd(liveEntry.avgCostUsd)} USD</span>
+                                        <span>{liveEntry.shares} shares · avg {fmtUsd(liveEntry.avgCostUsd)} USD</span>
                                         <span class="{liveEntry.gainUsd >= 0 ? 'text-green-400/70' : 'text-red-400/70'}">
                                             {liveEntry.gainUsd >= 0 ? '+' : ''}{fmtUsd(liveEntry.gainUsd)} USD &nbsp;{fmtPct(liveEntry.gainPct)}
                                         </span>
@@ -225,6 +256,45 @@
                     {/each}
                 {/if}
             </div>
+        </div>
+
+        <!-- CLOSED POSITIONS-seksjon -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="font-mono text-xs tracking-[0.45em] text-yellow-500">CLOSED POSITIONS</span>
+                <div class="flex-1 h-px bg-white/15"></div>
+                <span class="font-mono text-xs text-white/40">{closedPositions.length} TRADES</span>
+            </div>
+
+            <!-- Realisert totalgevinst -->
+            <div class="py-3 border-b border-white/10 mb-4">
+                <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <div class="font-mono text-[10px] tracking-widest text-yellow-500/60 mb-0.5">TOTAL REALIZED P&L</div>
+                        <div class="font-mono text-xs text-white/40 mt-0.5">All closed stock trades</div>
+                    </div>
+                    <div class="text-right flex-shrink-0">
+                        <div class="text-lg font-semibold tabular-nums {totalRealizedGain >= 0 ? 'text-green-400' : 'text-red-400'}">
+                            {totalRealizedGain >= 0 ? '+' : ''}{fmtNok(totalRealizedGain)}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {#each closedPositions as pos}
+                {@const gain = pos.receivedNok - pos.paidNok}
+                {@const gainPct = pos.paidNok > 0 ? (gain / pos.paidNok) * 100 : 0}
+                <div class="py-2 border-b border-white/5 last:border-0">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 font-mono text-xs font-bold text-white/30 flex-shrink-0">{pos.symbol}</div>
+                        <div class="flex-1 font-mono text-xs text-white/25 truncate">{pos.name}</div>
+                        <div class="font-mono text-xs text-white/25 flex-shrink-0">{pos.date}</div>
+                        <div class="font-mono text-xs flex-shrink-0 w-28 text-right {gain >= 0 ? 'text-green-400/60' : 'text-red-400/60'}">
+                            {gain >= 0 ? '+' : ''}{fmtNok(gain)} &nbsp;{fmtPct(gainPct)}
+                        </div>
+                    </div>
+                </div>
+            {/each}
         </div>
 
     </div>

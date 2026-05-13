@@ -19,7 +19,7 @@ export interface StockQuote {
     currency: string;
 }
 
-const STOCK_TICKERS = ['INTC', 'NVDA', 'MU', 'AMD'];
+const STOCK_TICKERS = ['KITT'];
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36';
 
 // Hjelpefunksjon: fetch med timeout slik at siden ikke henger
@@ -67,12 +67,12 @@ async function fetchUsdNok(fetch: typeof globalThis.fetch): Promise<number> {
     }
 }
 
-// Henter daglig NAV for Alfred Berg Global C via Yahoo Finance (ticker 0P0001OJFV.IR)
+// Henter daglig NAV for Alfred Berg Global C via Yahoo Finance (ticker 0P0001LR11.IR)
 // Morningstar-APIet er utilgjengelig; Yahoo Finance har fondet som ett av sine mutual fund-symboler
 async function fetchFundNav(fetch: typeof globalThis.fetch): Promise<FundNav | null> {
     try {
         const res = await fetchWithTimeout(
-            `https://query2.finance.yahoo.com/v8/finance/chart/0P0001OJFV.IR?range=5d&interval=1d`,
+            `https://query2.finance.yahoo.com/v8/finance/chart/0P0001LR11.IR?range=5d&interval=1d`,
             fetch
         );
         if (!res.ok) return null;
