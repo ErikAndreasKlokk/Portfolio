@@ -1,5 +1,5 @@
 <script lang="ts">
-    import mainPcImg from "$lib/assets/photos/IMG_1288.jpg";
+    import mainPcImg from "$lib/assets/photos/IMG_1169.jpg";
     import gamingImg from "$lib/assets/photos/IMG_1353.jpg";
     import homelabImg from "$lib/assets/photos/IMG_1404.jpg";
 
